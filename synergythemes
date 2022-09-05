@@ -8,7 +8,7 @@ local ThemeManager = {} do
 		['Synergy Default'] 		= { 1, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1c1c1c","AccentColor":"0055ff","BackgroundColor":"141414","OutlineColor":"323232"}') },
 		['Synergy Light'] 		= { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"ffffff","AccentColor":"7189da","BackgroundColor":"ffffff","OutlineColor":"ffffff"}') },
  		['Synergy Discord Theme'] 	= { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"2F3136","AccentColor":"7289da","BackgroundColor":"23272a","OutlineColor":"323232"}') },
-		['Synergy OLED'] 		= { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"000000","AccentColor":"000000","BackgroundColor":"000000","OutlineColor":"2c33ab"}') },
+		['Synergy OLED'] 		= { 4, httpService:JSONDecode('{"BackgroundColor":"000000","OutlineColor":"0065ff","FontColor":"ffffff","AccentColor":"0065ff","MainColor":"000000"}') },
 		
 	}
 
