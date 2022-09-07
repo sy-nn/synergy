@@ -1,0 +1,7 @@
+    _G.VERSION = 'Test';
+    _G.PROGRAM = 'PUBLIC';
+    _G.ANNOUNCEMENT = 'this is a test announcement';
+    _G.KEYSYSTEM = false;
+ 
+    _G.TYPE = 'PUBLIC';
+    _G.KEY = ''
