@@ -1,4 +1,4 @@
-    _G.version = 'Test';
+    _G.version = '2.0.5';
     _G.program = 'PUBLIC';
     _G.announcement = 'this is a test announcement';
     _G.keysystem = false;
