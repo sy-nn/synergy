@@ -1,7 +1,7 @@
-    _G.VERSION = 'Test';
-    _G.PROGRAM = 'PUBLIC';
-    _G.ANNOUNCEMENT = 'this is a test announcement';
-    _G.KEYSYSTEM = false;
+    _G.version = 'Test';
+    _G.program = 'PUBLIC';
+    _G.announcement = 'this is a test announcement';
+    _G.keysystem = false;
  
-    _G.TYPE = 'PUBLIC';
-    _G.KEY = ''
+    _G.type = 'PUBLIC';
+    _G.key = ''
