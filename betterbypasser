@@ -94,11 +94,17 @@ else
 
 end
 
-notifications:message{
-    Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
-    Description = "For the interest of security and anonymity, secure chat has been enabled.",
-    Icon = 6023426926
-}
+if not LOADED then
+
+	notifications:message{
+	    Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
+	    Description = "For the interest of security and anonymity, secure chat has been enabled.",
+	    Icon = 6023426926
+	}
+	
+end
+
+
 
 
 
@@ -355,17 +361,7 @@ notifications:notify{
 
 
 
-if LOADED then
 
-    wait()
-
-	notifications:message{
-        Title = "<font color='rgb(240,248,255)'>Hey!</font>",
-        Description = "Why the hell did you load this script again",
-        Icon = 10939379927
-    }
-	
-end
 
 wait(10)
 
