@@ -128,7 +128,10 @@ local Bypasses = {
     ["whore"] = "who{{aieixzvzx:re}}",
     ["kys"] = "k{{aieixzvzx:ys}}",
     ["kill"] = "ki{{aieixzvzx:ll}}",
+
     -- My custom words starts here
+
+    ["gay"] = "g{{aieixzvzx:ay}}",
     ["sex"] = "se{{aieixzvzx:x}}",
     ["sexy"] = "se{{aieixzvzx:xy}}",
     ["sexting"] = "se{{aieixzvzx:xting}}",
