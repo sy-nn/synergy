@@ -96,6 +96,8 @@ end
 
 if not LOADED then
 
+	
+
 	notifications:message{
 	    Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
 	    Description = "For the interest of security and anonymity, secure chat has been enabled.",
@@ -313,7 +315,7 @@ local ChatBypass; ChatBypass = hookmetamethod(Remote, "__namecall", function(sel
     return ChatBypass(self, ...)
 end)
 
-
+wait(3.5)
 
 notifications:message{
     Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
