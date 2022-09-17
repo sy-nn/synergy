@@ -185,6 +185,10 @@ local Bypasses = {
     ["nazi"] = "na{{aieixzvzx:zi}}",
     ["simp"] = "si{{aieixzvzx:mp}}",
     ["simping"] = "sim{{aieixzvzx:ping}}",
+	["meth"] = "me{{aieixzvzx:th}}",
+    ["cocaine"] = "co{{aieixzvzx:caine}}",
+    ["heroin"] = "hero{{aieixzvzx:in}}",
+    ["faggot"] = "fa{{aieixzvzx:ggot}}",
 
 -- Religious Words
 
@@ -194,6 +198,7 @@ local Bypasses = {
     ["muslim"] = "mu{{aieixzvzx:slim}}",
     ["jurdism"] = "jur{{aieixzvzx:dism}}",
     ["islam"] = "isl{{aieixzvzx:am}}",
+	["allah"] = "al{{aieixzvzx:lah}}",
     ["christianity"] = "chri{{aieixzvzx:stianity}}",
 
 -- Numbers
