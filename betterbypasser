@@ -1,0 +1,361 @@
+
+repeat wait() until game:IsLoaded()
+
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+
+
+local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
+local httpservice = game:GetService('HttpService')
+
+if syn then
+    
+
+    loadstring(game:HttpGet(("https://github.com/AnthonyIsntHere/anthonysrepository/blob/main/scripts/Anti%20Chat%20Logger.lua"),true))()
+
+    
+
+elseif fluxus or identifyexecutor() == 'Evon' then
+
+    if not game:IsLoaded() then
+        game.Loaded:wait()
+    end
+    
+    local Players = game:GetService("Players")
+    local Player = Players.LocalPlayer or Players.PlayerAdded:wait()
+    
+    local PostMessage = require(Player:WaitForChild("PlayerScripts"):WaitForChild("ChatScript"):WaitForChild("ChatMain")).MessagePosted
+    MessageEvent = Instance.new("BindableEvent")
+    
+    local OldFunctionHook
+    local PostMessageHook = function(self, Message)
+        if not checkcaller() and self == PostMessage then
+            MessageEvent:Fire(Message)
+            return
+        end
+        return OldFunctionHook(self, Message)
+    end
+    OldFunctionHook = hookfunction(PostMessage.fire, PostMessageHook)
+
+elseif IS_KRNL_LOADED  then
+
+    local logs = true --Enables logs or not
+    local ChatMain = require(game:GetService("Players").LocalPlayer.PlayerScripts.ChatScript.ChatMain)
+    local blacklistedFirstCharacter = {"a","b","c","d","e","f","g","h","i","j","k","m","n","l","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","M","N","L","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","/","@","?",}
+
+    local fakeMessagePosted = Instance.new("BindableEvent")
+    fakeMessagePosted.Name = "MessagePosted"
+
+    local oldMessagePosted = ChatMain.MessagePosted
+    ChatMain.MessagePosted = fakeMessagePosted
+
+    function IsBlacklisted(char)
+    if table.find(blacklistedFirstCharacter, char) ~= nil then
+        return true
+    end
+    return false
+    end
+
+    fakeMessagePosted.Event:Connect(function(msg)
+    if IsBlacklisted(string.sub(msg, 1, 1)) == true then
+        if logs == true then
+            printconsole("[LOGS]: Prevented "..tostring(msg).." to be in Chatted!")
+        end
+    elseif IsBlacklisted(string.sub(msg, 1, 1)) == false then
+        oldMessagePosted:fire(msg)
+        if logs == true then
+            printconsole("[LOGS]: Sent command "..tostring(msg).." to be in Chatted!")
+        end
+    end
+    end)
+
+else
+
+    if not game:IsLoaded() then
+        game.Loaded:wait()
+    end
+    
+    local Players = game:GetService("Players")
+    local Player = Players.LocalPlayer or Players.PlayerAdded:wait()
+    
+    local PostMessage = require(Player:WaitForChild("PlayerScripts"):WaitForChild("ChatScript"):WaitForChild("ChatMain")).MessagePosted
+    MessageEvent = Instance.new("BindableEvent")
+    
+    local OldFunctionHook
+    local PostMessageHook = function(self, Message)
+        if not checkcaller() and self == PostMessage then
+            MessageEvent:Fire(Message)
+            return
+        end
+        return OldFunctionHook(self, Message)
+    end
+    OldFunctionHook = hookfunction(PostMessage.fire, PostMessageHook)
+
+
+
+end
+
+notifications:message{
+    Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
+    Description = "For the interest of security and anonymity, secure chat has been enabled.",
+    Icon = 6023426926
+}
+
+
+
+
+
+local Bypasses = {
+    
+    ["ass"] = "as{{aieixzvzx:s}}",
+    ["asshole"] = "as{{aieixzvzx:shole}}",
+    ["bitch"] = "bit{{aieixzvzx:ch}}",
+    ["cock"] = "co{{aieixzvzx:ck}}",
+    ["cunt"] = "cu{{aieixzvzx:nt}}",
+    ["dick"] = "di{{zczxczvz:ck}}",
+    ["dyke"] = "dy{{aieixzvzx:ke}}",
+    ["faggot"] = "fa{{aieixzvzx:ggot}}",
+    ["fuck"] = "fu{{aieixzvzx:ck}}",
+    ["gaylord"] = "gayl{{aieixzvzx:ord}}",
+    ["kike"] = "ki{{aieixzvzx:ke}}",
+    ["motherfucker"] = "motherf{{aieixzvzx:ucker}}",
+    ["nigga"] = "ni{{aieixzvzx:gga}}",
+    ["nigger"] = "ni{{aieixzvzx:gger}}",
+    ["piss"] = "p{{aieixzvzx:iss}}",
+    ["penis"] = "pe{{aieixzvzx:nis}}",
+    ["pussy"] = "pu{{aieixzvzx:ssy}}",
+    ["shit"] = "sh{{aieixzvzx:it}}",
+    ["slut"] = "sl{{aieixzvzx:ut}}",
+    ["whore"] = "who{{aieixzvzx:re}}",
+    ["kys"] = "k{{aieixzvzx:ys}}",
+    ["kill"] = "ki{{aieixzvzx:ll}}",
+
+    -- My custom words starts here
+
+    ["sex"] = "se{{aieixzvzx:x}}",
+    ["sexy"] = "se{{aieixzvzx:xy}}",
+    ["sexting"] = "se{{aieixzvzx:xting}}",
+    ["porn"] = "po{{aieixzvzx:rn}}",
+    ["cunt"] = "cu{{aieixzvzx:nt}}",
+    ["love"] = "lo{{aieixzvzx:ve}}",
+    ["kill"] = "ki{{aieixzvzx:ll}}",
+    ["v3rm"] = "v3{{aieixzvzx:rm}}",
+    ["hack"] = "ha{{aieixzvzx:ck}}",
+    ["hot"] = "ho{{aieixzvzx:t}}",
+    ["cock"] = "co{{aieixzvzx:ck}}",
+    ["shitty"] = "shi{{aieixzvzx:tty}}",
+    ["slut"] = "sl{{aieixzvzx:ut}}",
+    ["boobs"] = "bo{{aieixzvzx:obs}}",
+    ["condom"] = "con{{aieixzvzx:dom}}",
+    ["bang"] = "ba{{aieixzvzx:ng}}",
+    ["ligma"] = "li{{aieixzvzx:gma}}",
+    ["ligmaballs"] = "ligm{{aieixzvzx:aballs}}",
+    ["terrorist"] = "terror{{aieixzvzx:ist}}",
+    ["fatass"] = "fata{{aieixzvzx:ss}}",
+    ["horny"] = "hor{{aieixzvzx:ny}}",
+    ["lmao"] = "lm{{aieixzvzx:ao}}",
+    ["motherfucker"] = "motherfu{{aieixzvzx:cker}}",
+    ["anus"] = "an{{aieixzvzx:us}}",
+    ["hacks"] = "hac{{aieixzvzx:ks}}",
+    ["penis"] = "pen{{aieixzvzx:is}}",
+    ["whore"] = "wh{{aieixzvzx:ore}}",
+    ["predator"] = "pred{{aieixzvzx:ator}}",
+    ["kiss"] = "ki{{aieixzvzx:ss}}",
+    ["athiest"] = "athi{{aieixzvzx:est}}",
+    ["jewish"] = "je{{aieixzvzx:wish}}",
+    ["christian"] = "chri{{aieixzvzx:stian}}",
+    ["muslim"] = "mu{{aieixzvzx:slim}}",
+    ["jurdism"] = "jur{{aieixzvzx:dism}}",
+    ["islam"] = "isl{{aieixzvzx:am}}",
+    ["christianity"] = "chri{{aieixzvzx:stianity}}",
+    ["1"] = "on{{aieixzvzx:e}}",
+    ["2"] = "t{{aieixzvzx:wo}}",
+    ["3"] = "th{{aieixzvzx:ree}}",
+    ["4"] = "fo{{aieixzvzx:ur}}",
+    ["5"] = "fi{{aieixzvzx:ve}}",
+    ["6"] = "s{{aieixzvzx:ix}}",
+    ["7"] = "se{{aieixzvzx:ven}}",
+    ["8"] = "ei{{aieixzvzx:ght}}",
+    ["9"] = "ni{{aieixzvzx:ne}}",
+    ["10"] = "te{{aieixzvzx:n}}",
+    ["bomb"] = "bom{{aieixzvzx:b}}",
+    ["dick"] = "d{{aieixzvzx:icc}}",
+    ["you"] = "yo{{aieixzvzx:u}}",
+    ["child"] = "chi{{aieixzvzx:ld}}",
+    ["my"] = "m{{aieixzvzx:y}}",
+    ["racism"] = "raci{{aieixzvzx:sm}}",
+    ["hoe"] = "h{{aieixzvzx:oe}}",
+    ["pedo"] = "pe{{aieixzvzx:do}}",
+    ["nsfw"] = "ns{{aieixzvzx:fw}}",
+    ["suck"] = "su{{aieixzvzx:ck}}",
+    ["scammer"] = "sca{{aieixzvzx:mmer}}",
+    ["fucker"] = "fu{{aieixzvzx:cker}}",
+    ["hitler"] = "hit{{aieixzvzx:ler}}",
+
+
+-- Social Medias
+
+
+    ["twitter"] = "twi{{aieixzvzx:tter}}",
+    ["youtube"] = "you{{aieixzvzx:tube}}",
+    ["rumble"] = "rum{{aieixzvzx:ble}}",
+    ["tiktok"] = "tik{{aieixzvzx:tok}}",
+    ["facebook"] = "face{{aieixzvzx:book}}",
+    ["whatsapp"] = "wha{{aieixzvzx:tsapp}}",
+    ["discord"] = "dis{{aieixzvzx:cord}}",
+    ["instagram"] = "inst{{aieixzvzx:agram}}",
+    ["snapchat"] = "snap{{aieixzvzx:chat}}",
+
+
+
+-- Incorrect tagging purposes only
+
+
+
+    ["and"] = "a{{aieixzvzx:nd}}",
+    ["or"] = "o{{aieixzvzx:r}}",
+    ["if"] = "i{{aieixzvzx:f}}",
+    ["else"] = "el{{aieixzvzx:se}}",
+    ["then"] = "th{{aieixzvzx:en}}",
+    ["why"] = "wh{{aieixzvzx:y}}",
+    ["what"] = "wha{{aieixzvzx:t}}",
+    ["who"] = "wh{{aieixzvzx:o}}",
+    ["where"] = "wh{{aieixzvzx:ere}}",
+    ["see"] = "se{{aieixzvzx:e}}",
+    ["do"] = "d{{aieixzvzx:o}}",
+    ["the"] = "th{{aieixzvzx:e}}",
+    ["to"] = "t{{aieixzvzx:o}}",
+    ["of"] = "o{{aieixzvzx:f}}",
+    ["he"] = "h{{aieixzvzx:e}}",
+    ["she"] = "sh{{aieixzvzx:e}}",
+    ["they"] = "th{{aieixzvzx:ey}}",
+    ["them"] = "th{{aieixzvzx:em}}",
+    ["had"] = "h{{aieixzvzx:add}}",
+    ["for"] = "fo{{aieixzvzx:r}}",
+    ["on"] = "o{{aieixzvzx:n}}",
+    ["as"] = "a{{aieixzvzx:s}}",
+    ["you"] = "yo{{aieixzvzx:u}}",
+    ["my"] = "m{{aieixzvzx:y}}",
+    ["yours"] = "you{{aieixzvzx:rs}}",
+    ["not"] = "no{{aieixzvzx:t}}",
+    ["with"] = "wi{{aieixzvzx:th}}",
+    ["number"] = "numb{{aieixzvzx:er}}",
+    ["numbers"] = "numb{{aieixzvzx:ers}}",
+    ["day"] = "da{{aieixzvzx:y}}",
+    ["night"] = "ni{{aieixzvzx:ght}}",
+    ["get"] = "ge{{aieixzvzx:t}}",
+    ["come"] = "co{{aieixzvzx:me}}",
+    ["it"] = "i{{aieixzvzx:t}}",
+    ["some"] = "so{{aieixzvzx:me}}",
+    ["there"] = "the{{aieixzvzx:re}}",
+    ["but"] = "bu{{aieixzvzx:t}}",
+    ["more"] = "mo{{aieixzvzx:re}}",
+    ["all"] = "a{{aieixzvzx:ll}}",
+    ["get"] = "ge{{aieixzvzx:t}}",
+    ["its"] = "i{{aieixzvzx:ts}}",
+    ["yes"] = "ye{{aieixzvzx:s}}",
+    ["no"] = "n{{aieixzvzx:o}}",
+    ["so"] = "s{{aieixzvzx:o}}",
+    ["said"] = "sa{{aieixzvzx:id}}",
+    ["can"] = "ca{{aieixzvzx:n}}",
+    ["nazi"] = "na{{aieixzvzx:zi}}"
+}
+
+
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Remote = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
+
+local ChatBypass; ChatBypass = hookmetamethod(Remote, "__namecall", function(self, ...)
+    local Method = getnamecallmethod()
+    local Arguments = {...}
+    
+    if self == Remote and Method == "FireServer" then
+        local Message = Arguments[1]
+        local Split = Message:split(" ")
+        local FinalMessage = ""
+
+        for _, x in next, Split do
+            for _, Bypass in next, Bypasses do
+                if x:lower() == _ then
+                    if x:upper() ~= x then
+                        Message = Message:gsub(x, Bypass)
+                        FinalMessage = Message .. " ng"
+                    else
+                        Message = Message:gsub(x, Bypass):upper()
+                        FinalMessage = Message:gsub(x, Bypass):upper() .. " ng"
+                    end
+                end
+            end
+        end
+        
+        if FinalMessage ~= "" then
+            Arguments[1] = FinalMessage
+        end
+        
+        return ChatBypass(self, unpack(Arguments))
+    end
+    
+    return ChatBypass(self, ...)
+end)
+
+
+
+notifications:message{
+    Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
+    Description = "Bypasser was originally done by Decayed#5038 and AnthonyIsHere on V3rm. Modified by daddysyn",
+    Icon = 6023426926
+}
+
+wait(5)
+
+notifications:notify{
+    Title = "Discord Server",
+    Description = "Would you like to join the Discord Server?",
+    Accept = {
+    Text = "Yes",
+        Callback = function()
+            httprequest(
+            {
+                Url = "http://127.0.0.1:6463/rpc?v=1",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json",
+                    ["Origin"] = "https://discord.com"
+                },
+                Body = game:GetService("HttpService"):JSONEncode(
+                    {
+                        cmd = "INVITE_BROWSER",
+                        args = {
+                            code = "s4PxTVMUZp"
+                        },
+                        nonce = game:GetService("HttpService"):GenerateGUID(false)
+                    }
+                )
+            }
+        )
+        end,
+    },
+    
+    Dismiss = {
+        Text = "No",
+        Callback = function()
+            print("Declined")
+        end,
+    }
+}
+
+
+
+if LOADED then
+
+    wait(5)
+
+	notifications:message{
+        Title = "<font color='rgb(240,248,255)'>Hey!</font>",
+        Description = "Why the hell did you load this script again",
+        Icon = 6023426926
+    }
+	
+end
+
+pcall(function() getgenv().LOADED = true end)
