@@ -128,9 +128,7 @@ local Bypasses = {
     ["whore"] = "who{{aieixzvzx:re}}",
     ["kys"] = "k{{aieixzvzx:ys}}",
     ["kill"] = "ki{{aieixzvzx:ll}}",
-
     -- My custom words starts here
-
     ["sex"] = "se{{aieixzvzx:x}}",
     ["sexy"] = "se{{aieixzvzx:xy}}",
     ["sexting"] = "se{{aieixzvzx:xting}}",
@@ -160,23 +158,6 @@ local Bypasses = {
     ["whore"] = "wh{{aieixzvzx:ore}}",
     ["predator"] = "pred{{aieixzvzx:ator}}",
     ["kiss"] = "ki{{aieixzvzx:ss}}",
-    ["athiest"] = "athi{{aieixzvzx:est}}",
-    ["jewish"] = "je{{aieixzvzx:wish}}",
-    ["christian"] = "chri{{aieixzvzx:stian}}",
-    ["muslim"] = "mu{{aieixzvzx:slim}}",
-    ["jurdism"] = "jur{{aieixzvzx:dism}}",
-    ["islam"] = "isl{{aieixzvzx:am}}",
-    ["christianity"] = "chri{{aieixzvzx:stianity}}",
-    ["1"] = "on{{aieixzvzx:e}}",
-    ["2"] = "t{{aieixzvzx:wo}}",
-    ["3"] = "th{{aieixzvzx:ree}}",
-    ["4"] = "fo{{aieixzvzx:ur}}",
-    ["5"] = "fi{{aieixzvzx:ve}}",
-    ["6"] = "s{{aieixzvzx:ix}}",
-    ["7"] = "se{{aieixzvzx:ven}}",
-    ["8"] = "ei{{aieixzvzx:ght}}",
-    ["9"] = "ni{{aieixzvzx:ne}}",
-    ["10"] = "te{{aieixzvzx:n}}",
     ["bomb"] = "bom{{aieixzvzx:b}}",
     ["dick"] = "d{{aieixzvzx:icc}}",
     ["you"] = "yo{{aieixzvzx:u}}",
@@ -190,6 +171,32 @@ local Bypasses = {
     ["scammer"] = "sca{{aieixzvzx:mmer}}",
     ["fucker"] = "fu{{aieixzvzx:cker}}",
     ["hitler"] = "hit{{aieixzvzx:ler}}",
+    ["nazi"] = "na{{aieixzvzx:zi}}",
+    ["simp"] = "si{{aieixzvzx:mp}}",
+    ["simping"] = "sim{{aieixzvzx:ping}}",
+
+-- Religious Words
+
+    ["athiest"] = "athi{{aieixzvzx:est}}",
+    ["jewish"] = "je{{aieixzvzx:wish}}",
+    ["christian"] = "chri{{aieixzvzx:stian}}",
+    ["muslim"] = "mu{{aieixzvzx:slim}}",
+    ["jurdism"] = "jur{{aieixzvzx:dism}}",
+    ["islam"] = "isl{{aieixzvzx:am}}",
+    ["christianity"] = "chri{{aieixzvzx:stianity}}",
+
+-- Numbers
+
+    ["1"] = "on{{aieixzvzx:e}}",
+    ["2"] = "t{{aieixzvzx:wo}}",
+    ["3"] = "th{{aieixzvzx:ree}}",
+    ["4"] = "fo{{aieixzvzx:ur}}",
+    ["5"] = "fi{{aieixzvzx:ve}}",
+    ["6"] = "s{{aieixzvzx:ix}}",
+    ["7"] = "se{{aieixzvzx:ven}}",
+    ["8"] = "ei{{aieixzvzx:ght}}",
+    ["9"] = "ni{{aieixzvzx:ne}}",
+    ["10"] = "te{{aieixzvzx:n}}",
 
 
 -- Social Medias
@@ -201,7 +208,7 @@ local Bypasses = {
     ["tiktok"] = "tik{{aieixzvzx:tok}}",
     ["facebook"] = "face{{aieixzvzx:book}}",
     ["whatsapp"] = "wha{{aieixzvzx:tsapp}}",
-    ["discord"] = "dis{{aieixzvzx:cord}}",
+    ["discord"] = "disco{{aieixzvzx:rd}}",
     ["instagram"] = "inst{{aieixzvzx:agram}}",
     ["snapchat"] = "snap{{aieixzvzx:chat}}",
 
@@ -222,7 +229,6 @@ local Bypasses = {
     ["where"] = "wh{{aieixzvzx:ere}}",
     ["see"] = "se{{aieixzvzx:e}}",
     ["do"] = "d{{aieixzvzx:o}}",
-    ["the"] = "th{{aieixzvzx:e}}",
     ["to"] = "t{{aieixzvzx:o}}",
     ["of"] = "o{{aieixzvzx:f}}",
     ["he"] = "h{{aieixzvzx:e}}",
@@ -257,7 +263,7 @@ local Bypasses = {
     ["so"] = "s{{aieixzvzx:o}}",
     ["said"] = "sa{{aieixzvzx:id}}",
     ["can"] = "ca{{aieixzvzx:n}}",
-    ["nazi"] = "na{{aieixzvzx:zi}}"
+    
 }
 
 
@@ -306,7 +312,7 @@ notifications:message{
     Icon = 6023426926
 }
 
-wait(5)
+wait(5.5)
 
 notifications:notify{
     Title = "Discord Server",
@@ -348,14 +354,22 @@ notifications:notify{
 
 if LOADED then
 
-    wait(5)
+    wait()
 
 	notifications:message{
         Title = "<font color='rgb(240,248,255)'>Hey!</font>",
         Description = "Why the hell did you load this script again",
-        Icon = 6023426926
+        Icon = 10939379927
     }
 	
 end
+
+wait(10)
+
+notifications:message{
+    Title = "<font color='rgb(240,248,255)'>Warning</font>",
+    Description = "sacred a skid",
+    Icon = 10939379927
+}
 
 pcall(function() getgenv().LOADED = true end)
