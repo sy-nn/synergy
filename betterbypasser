@@ -332,7 +332,7 @@ wait(3.5)
 if not LOADED then
     a:message {
         Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
-        Description = "Bypasser was originally done by Decayed#5038 and AnthonyIsHere on V3rm. Modified by daddysyn",
+        Description = "FIRSTLY DISCOVERED WAS BY tav#8870. Bypasser was done by Decayed#5038 and AnthonyIsHere on V3rm. Modified by daddysyn",
         Icon = 6023426926
     }
     wait(5.5)
