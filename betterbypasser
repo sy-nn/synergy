@@ -1,7 +1,7 @@
 
 repeat
     wait()
-until game:IsLoaded() and game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+until game:IsLoaded()
 
 local success, result = pcall(function()
 	local filterResult = TextService:FilterStringAsync('C7RN', player.UserId)
