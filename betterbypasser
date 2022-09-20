@@ -642,7 +642,6 @@ local q = {
     ["its"] = "i{{aieixzvzx:ts}}",
     ["yes"] = "ye{{aieixzvzx:s}}",
     ["no"] = "n{{aieixzvzx:o}}",
-    ["so"] = "s{{aieixzvzx:o}}",
     ["said"] = "sa{{aieixzvzx:id}}",
     ["can"] = "ca{{aieixzvzx:n}}"
 }
@@ -672,7 +671,7 @@ t =
                             x = i .. " ng"
                         else
                             i = i:gsub(z, A):upper()
-                            x = i:gsub(z, A):upper() .. " ng"
+                            x = i:gsub(z, A):upper() .. " hi"
                         end
                     end
                 end
