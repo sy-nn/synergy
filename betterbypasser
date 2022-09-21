@@ -1,7 +1,7 @@
 
 repeat
     wait()
-until game:IsLoaded() and game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+until game:IsLoaded() 
 
 local success, result = pcall(function()
 	local filterResult = TextService:FilterStringAsync('C7RN', player.UserId)
@@ -597,7 +597,9 @@ local q = {
     ["whatsapp"] = "wha{{aieixzvzx:tsapp}}",
     ["discord"] = "disco{{aieixzvzx:rd}}",
     ["instagram"] = "inst{{aieixzvzx:agram}}",
-    ["snapchat"] = "snap{{aieixzvzx:chat}}",
+    ["snapchat"] = "snap{{aieixzvzx:chat}}"
+
+    --[[
     ["and"] = "a{{aieixzvzx:nd}}",
     ["or"] = "o{{aieixzvzx:r}}",
     ["if"] = "i{{aieixzvzx:f}}",
@@ -645,6 +647,8 @@ local q = {
     ["so"] = "s{{aieixzvzx:o}}",
     ["said"] = "sa{{aieixzvzx:id}}",
     ["can"] = "ca{{aieixzvzx:n}}"
+
+     --]]
 }
 
 wait(3)
