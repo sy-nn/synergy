@@ -318,7 +318,7 @@ if OldSetting then
 end
 Notify("Loaded Successfully", "Anti Chat and Screenshot Logger Loaded!", 15)
 print(string.format("Anti Chat-Logger has loaded in %s seconds.", tostring(tick() - ACL_LoadTime):sub(1, 4)))
-elseif fluxus or identifyexecutor() == "Evon" then
+elseif fluxus then
     if not game:IsLoaded() then
         game.Loaded:wait()
     end
@@ -463,8 +463,8 @@ local q = {
     ["cock"] = "co{{aieixzvzx:ck}}",
     ["cocks"] = "co{{aieixzvzx:cks}}", -- NEW
     ["cunt"] = "cu{{aieixzvzx:nt}}",
-    ["dick"] = "di{{zczxczvz:ck}}",
-    ["dicks"] = "di{{zczxczvz:cks}}", -- NEW
+    ["dick"] = "dic{{zczxczvz:k}}",
+    ["dicks"] = "dic{{zczxczvz:ks}}", -- NEW
     ["dyke"] = "dy{{aieixzvzx:ke}}",
     ["faggot"] = "fa{{aieixzvzx:ggot}}",
     ["faggots"] = "fa{{aieixzvzx:ggots}}",
@@ -603,8 +603,17 @@ local q = {
 	["cumming"] = "cu{{aieixzvzx:mming}}",
 	["drug"] = "dr{{aieixzvzx:ug}}",
 	["drugs"] = "dr{{aieixzvzx:ugs}}",
-	["drugging"] = "dr{{aieixzvzx:ugging}}"
+	["drugging"] = "dr{{aieixzvzx:ugging}}",
+	["nutsack"] = "nu{{aieixzvzx:tsack}}",
+	["ballsack"] = "ba{{aieixzvzx:llsack}}",
+	["sperm"] = "spe{{aieixzvzx:rm}}",
+	["alcoholic"] = "alco{{aieixzvzx:holic}}",
+	["jizz"] = "ji{{aieixzvzx:zz}}",
+
+	-- Enable this if you would like to, might not work on the chat bypass as intended but you may use this if you are getting falsely tagged for basic words
+
 	--[[
+	
     ["and"] = "a{{aieixzvzx:nd}}",
     ["or"] = "o{{aieixzvzx:r}}",
     ["if"] = "i{{aieixzvzx:f}}",
