@@ -451,7 +451,7 @@ if not LOADED then
     a:message {
         Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
         Description = "For the interest of security and anonymity, secure chat has been enabled.",
-        Icon = 10952973354
+        Icon = "rbxassetid://10952973354"
     }
 end
 local q = {
@@ -601,6 +601,9 @@ local q = {
 	["cum"] = "cu{{aieixzvzx:m}}",
 	["cums"] = "cu{{aieixzvzx:ms}}",
 	["cumming"] = "cu{{aieixzvzx:mming}}",
+	["drug"] = "dr{{aieixzvzx:ug}}",
+	["drugs"] = "dr{{aieixzvzx:ugs}}",
+	["drugging"] = "dr{{aieixzvzx:ugging}}"
 	--[[
     ["and"] = "a{{aieixzvzx:nd}}",
     ["or"] = "o{{aieixzvzx:r}}",
