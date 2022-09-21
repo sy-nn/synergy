@@ -598,6 +598,10 @@ local q = {
     ["discord"] = "disco{{aieixzvzx:rd}}",
     ["instagram"] = "inst{{aieixzvzx:agram}}",
     ["snapchat"] = "snap{{aieixzvzx:chat}}",
+	["cum"] = "cu{{aieixzvzx:m}}",
+	["cums"] = "cu{{aieixzvzx:ms}}",
+	["cumming"] = "cu{{aieixzvzx:mming}}",
+	--[[
     ["and"] = "a{{aieixzvzx:nd}}",
     ["or"] = "o{{aieixzvzx:r}}",
     ["if"] = "i{{aieixzvzx:f}}",
@@ -644,6 +648,7 @@ local q = {
     ["no"] = "n{{aieixzvzx:o}}",
     ["said"] = "sa{{aieixzvzx:id}}",
     ["can"] = "ca{{aieixzvzx:n}}"
+	]]
 }
 
 wait(3)
@@ -671,7 +676,7 @@ t =
                             x = i .. " ng"
                         else
                             i = i:gsub(z, A):upper()
-                            x = i:gsub(z, A):upper() .. " hi"
+                            x = i:gsub(z, A):upper() .. " ng"
                         end
                     end
                 end
