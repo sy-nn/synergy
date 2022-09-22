@@ -512,6 +512,7 @@ local q = {
     ["dating"] = "da{{aieixzvzx:ting}}", -- NEW
     ["dater"] = "da{{aieixzvzx:ter}}", -- NEW
     ["rape"] = "ra{{aieixzvzx:pe}}",
+    ["raped"] = "rap{{aieixzvzx:ed}}",
     ["rapes"] = "ra{{aieixzvzx:pes}}", -- NEW
     ["raping"] = "rap{{aieixzvzx:ing}}", -- NEW
     ["raper"] = "ra{{aieixzvzx:per}}", -- NEW
