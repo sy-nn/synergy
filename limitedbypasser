@@ -676,10 +676,10 @@ t =
                     if z:lower() == y then
                         if z:upper() ~= z then
                             i = i:gsub(z, A)
-                            x = i .. " ##"
+                            x = i .. "##"
                         else
                             i = i:gsub(z, A):upper()
-                            x = i:gsub(z, A):upper() .. " ##"
+                            x = i:gsub(z, A):upper() .. "##"
                         end
                     end
                 end
