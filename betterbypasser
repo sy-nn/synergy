@@ -1,7 +1,7 @@
 
 repeat
     wait()
-until game:IsLoaded() 
+until game:IsLoaded()
 
 local success, result = pcall(function()
 	local filterResult = TextService:FilterStringAsync('C7RN', player.UserId)
@@ -512,6 +512,7 @@ local q = {
     ["dating"] = "da{{aieixzvzx:ting}}", -- NEW
     ["dater"] = "da{{aieixzvzx:ter}}", -- NEW
     ["rape"] = "ra{{aieixzvzx:pe}}",
+    ["raped"] = "rap{{aieixzvzx:ed}}", -- NEW
     ["rapes"] = "ra{{aieixzvzx:pes}}", -- NEW
     ["raping"] = "rap{{aieixzvzx:ing}}", -- NEW
     ["raper"] = "ra{{aieixzvzx:per}}", -- NEW
@@ -569,6 +570,8 @@ local q = {
     ["cocaine"] = "co{{aieixzvzx:caine}}",
     ["heroin"] = "hero{{aieixzvzx:in}}",
     ["faggot"] = "fa{{aieixzvzx:ggot}}",
+    ["ballsack"] = "ba{{aieixzvzx:llsack}}",
+    ["nutsack"] = "nu{{aieixzvzx:tsack}}",
     ["athiest"] = "athi{{aieixzvzx:est}}",
     ["jewish"] = "je{{aieixzvzx:wish}}",
     ["christian"] = "chri{{aieixzvzx:stian}}",
@@ -579,6 +582,7 @@ local q = {
     ["muhammad"] = "muha{{aieixzvzx:mmad}}",
     ["christianity"] = "chri{{aieixzvzx:stianity}}",
     ["satanism"] = "sata{{aieixzvzx:nism}}",
+
     ["1"] = "on{{aieixzvzx:e}}",
     ["2"] = "t{{aieixzvzx:wo}}",
     ["3"] = "th{{aieixzvzx:ree}}",
@@ -648,7 +652,7 @@ local q = {
     ["said"] = "sa{{aieixzvzx:id}}",
     ["can"] = "ca{{aieixzvzx:n}}"
 
-     --]]
+    ]]
 }
 
 wait(3)
@@ -698,6 +702,20 @@ if not LOADED then
     }
 
     wait(2.5)
+
+    a:message {
+        Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
+        Description = "Thanks to riptide for finding this! mwa riptide",
+        Icon = 6023426926
+    }
+
+    wait(2.5)
+
+    a:message {
+        Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
+        Description = "Keep in mind that your sentences might get tagged because it is intentionally ## at the end.",
+        Icon = 6023426926
+    }
 
 end
 
