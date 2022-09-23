@@ -497,6 +497,8 @@ local q = {
     ["sluts"] = "sl{{aieixzvzx:uts}}", -- NEW
     ["whore"] = "who{{aieixzvzx:re}}",
     ["whores"] = "who{{aieixzvzx:res}}", -- NEW
+    ["retard"] = "ret{{aieixzvzx:ard}}",
+    ["retarded"] = "ret{{aieixzvzx:arded}}",
     ["kys"] = "k{{aieixzvzx:ys}}",
     ["kill"] = "ki{{aieixzvzx:ll}}",
     ["kills"] = "ki{{aieixzvzx:lls}}", -- NEW
@@ -504,7 +506,6 @@ local q = {
     ["gay"] = "g{{aieixzvzx:ay}}",
     ["gays"] = "g{{aieixzvzx:ays}}",
     ["sex"] = "se{{aieixzvzx:x}}",
-    ["sexual"] = "se{{aieixzvzx:xual}}",
     ["sexy"] = "se{{aieixzvzx:xy}}",
     ["sexting"] = "se{{aieixzvzx:xting}}",
     ["porn"] = "po{{aieixzvzx:rn}}",
@@ -517,7 +518,7 @@ local q = {
     ["dating"] = "da{{aieixzvzx:ting}}", -- NEW
     ["dater"] = "da{{aieixzvzx:ter}}", -- NEW
     ["rape"] = "ra{{aieixzvzx:pe}}",
-    ["raped"] = "rap{{aieixzvzx:ed}}", -- NEW
+    ["raped"] = "rap{{aieixzvzx:ed}}",
     ["rapes"] = "ra{{aieixzvzx:pes}}", -- NEW
     ["raping"] = "rap{{aieixzvzx:ing}}", -- NEW
     ["raper"] = "ra{{aieixzvzx:per}}", -- NEW
@@ -540,8 +541,6 @@ local q = {
     ["ligmaballs"] = "ligm{{aieixzvzx:aballs}}",
     ["terrorist"] = "terror{{aieixzvzx:ist}}",
     ["terrorists"] = "terror{{aieixzvzx:ists}}", -- NEW
-    ["retard"] = "ret{{aieixzvzx:ard}}",
-    ["retarded"] = "ret{{aieixzvzx:arded}}",
     ["horny"] = "horn{{aieixzvzx:y}}",
     ["mf"] = "m{{aieixzvzx:f}}",
     ["lmao"] = "lm{{aieixzvzx:ao}}",
@@ -563,12 +562,12 @@ local q = {
     ["hoe"] = "h{{aieixzvzx:oe}}",
     ["pedo"] = "pe{{aieixzvzx:do}}",
     ["nsfw"] = "ns{{aieixzvzx:fw}}",
-    ["creampie"] = "cream{{aieixzvzx:pie}",
     ["suck"] = "su{{aieixzvzx:ck}}",
     ["cum"] = "c{{aieixzvzx:um}}",
     ["cums"] = "c{{aieixzvzx:ums}}",
     ["cumming"] = "cu{{aieixzvzx:mming}}",
     ["cumload"] = "cu{{aieixzvzx:mload}}",
+    ["creampie"] = "cre{{aieixzvzx:ampie}",
     ["scammer"] = "sca{{aieixzvzx:mmer}}",
     ["fucker"] = "fu{{aieixzvzx:cker}}",
     ["hitler"] = "hit{{aieixzvzx:ler}}",
@@ -684,10 +683,10 @@ t =
                     if z:lower() == y then
                         if z:upper() ~= z then
                             i = i:gsub(z, A)
-                            x = i .. " ng"
+                            x = i .. " fn"
                         else
                             i = i:gsub(z, A):upper()
-                            x = i:gsub(z, A):upper() .. " ng"
+                            x = i:gsub(z, A):upper() .. "##"
                         end
                     end
                 end
@@ -708,6 +707,21 @@ if not LOADED then
         Icon = 6023426926
     }
 
+    wait(2.5)
+
+    a:message {
+        Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
+        Description = "Thanks to riptide for finding this! mwa riptide",
+        Icon = 6023426926
+    }
+
+    wait(2.5)
+
+    a:message {
+        Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
+        Description = "Keep in mind that your sentences might get tagged because it is intentionally ## at the end.",
+        Icon = 6023426926
+    }
 
 end
 
