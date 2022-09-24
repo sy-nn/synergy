@@ -9,7 +9,7 @@ local success, result = pcall(function()
 end)
 
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/limitedbypasser'))()")
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
 
 function execute()
 
@@ -459,48 +459,63 @@ local q = {
     ["ass"] = "as{{aieixzvzx:s}}",
     ["asshole"] = "as{{aieixzvzx:shole}}",
     ["deadass"] = "dead as{{aieixzvzx:s}}",
+    ["arse"] = "ar{{aieixzvzx:se}}", --NEW
+    ["arsehead"] = "ar{{aieixzvzx:se}}head", --NEW
+    ["arsehole"] = "ar{{aieixzvzx:se}}hole", --NEW
     ["bitch"] = "bit{{aieixzvzx:ch}}",
-    ["bitches"] = "bit{{aieixzvzx:ches}}", -- NEW
+    ["bitches"] = "bit{{aieixzvzx:ches}}",  
     ["cock"] = "co{{aieixzvzx:ck}}",
-    ["cocks"] = "co{{aieixzvzx:cks}}", -- NEW
+    ["cocks"] = "co{{aieixzvzx:cks}}",  
     ["cunt"] = "cu{{aieixzvzx:nt}}",
     ["dick"] = "di{{zczxczvz:ck}}",
     ["dickhead"] = "di{{zczxczvz:ckhead}}",
-    ["dicks"] = "di{{zczxczvz:cks}}", -- NEW
+    ["dicks"] = "di{{zczxczvz:cks}}",  
     ["dyke"] = "dy{{aieixzvzx:ke}}",
     ["faggot"] = "fa{{aieixzvzx:ggot}}",
     ["faggots"] = "fa{{aieixzvzx:ggots}}",
     ["fuck"] = "fu{{aieixzvzx:ck}}",
     ["fucks"] = "fu{{aieixzvzx:cks}}",
     ["fucked"] = "fu{{aieixzvzx:cked}}",
+    ["fucking"] = "fu{{aieixzvzx:ckign}}",
+    ["fuckin"] = "fu{{aieixzvzx:ckign}}",
     ["gaylord"] = "gayl{{aieixzvzx:ord}}",
-    ["gaylords"] = "gayl{{aieixzvzx:ords}}", -- NEW
+    ["gaylords"] = "gayl{{aieixzvzx:ords}}",  
+    ["bastard"] = "bas{{aieixzvzx:tard}}",  --NEW
+    ["bastards"] = "bas{{aieixzvzx:tards}}",  --NEW
     ["kike"] = "ki{{aieixzvzx:ke}}",
-    ["kikes"] = "ki{{aieixzvzx:kes}}", -- NEW
+    ["kikes"] = "ki{{aieixzvzx:kes}}",  
     ["motherfucker"] = "motherf{{aieixzvzx:ucker}}",
+    ["brotherfucker"] = "brotherf{{aieixzvzx:ucker}}", --NEW
+    ["fatherfucker"] = "fatherf{{aieixzvzx:ucker}}", --NEW
+    ["bugger"] = "bugg{{aieixzvzx:er}}", --NEW
+    ["buggers"] = "bugg{{aieixzvzx:er}}s", --NEW
     ["nigga"] = "ni{{aieixzvzx:gga}}",
     ["nigga"] = "ni{{aieixzvzx:ggas}}",
     ["nigger"] = "ni{{aieixzvzx:gger}}",
     ["nigger"] = "ni{{aieixzvzx:ggers}}",
     ["piss"] = "p{{aieixzvzx:iss}}", 
-    ["pisses"] = "p{{aieixzvzx:isses}}", -- NEW
+    ["pisses"] = "p{{aieixzvzx:isses}}",  
+    ["pissing"] = "p{{aieixzvzx:is}}sing", --NEW
+    ["pisser"] = "pi{{aieixzvzx:sser}}", --NEW
     ["penis"] = "pe{{aieixzvzx:nis}}",
-    ["penisses"] = "pe{{aieixzvzx:nisses}}", -- NEW
+    ["penisses"] = "pe{{aieixzvzx:nisses}}",  
     ["pussy"] = "pu{{aieixzvzx:ssy}}",
     ["shit"] = "sh{{aieixzvzx:it}}",
-    ["shitter"] = "sh{{aieixzvzx:itter}}", -- NEW
-    ["shitting"] = "sh{{aieixzvzx:itting}}", -- NEW
+    ["shitter"] = "sh{{aieixzvzx:itter}}",  
+    ["shitting"] = "sh{{aieixzvzx:itting}}",  
     ["shitty"] = "shi{{aieixzvzx:tty}}",
+    ["horseshit"] = "horsesh{{aieixzvzx:it}}", --NEW
+    ["jerk"] = "je{{aieixzvzx:rk}}", --NEW
+    ["jerking"] = "jer{{aieixzvzx:king}}", --NEW
     ["slut"] = "sl{{aieixzvzx:ut}}",
-    ["sluts"] = "sl{{aieixzvzx:uts}}", -- NEW
+    ["sluts"] = "sl{{aieixzvzx:uts}}",  
     ["whore"] = "who{{aieixzvzx:re}}",
-    ["whores"] = "who{{aieixzvzx:res}}", -- NEW
+    ["whores"] = "who{{aieixzvzx:res}}",  
     ["retard"] = "ret{{aieixzvzx:ard}}",
     ["retarded"] = "ret{{aieixzvzx:arded}}",
-    ["kys"] = "k{{aieixzvzx:ys}}",
     ["kill"] = "ki{{aieixzvzx:ll}}",
-    ["kills"] = "ki{{aieixzvzx:lls}}", -- NEW
-    ["killing"] = "ki{{aieixzvzx:lling}}", -- NEW
+    ["kills"] = "ki{{aieixzvzx:lls}}",  
+    ["killing"] = "ki{{aieixzvzx:lling}}",  
     ["gay"] = "g{{aieixzvzx:ay}}",
     ["gays"] = "g{{aieixzvzx:ays}}",
     ["sex"] = "se{{aieixzvzx:x}}",
@@ -508,50 +523,57 @@ local q = {
     ["sexting"] = "se{{aieixzvzx:xting}}",
     ["porn"] = "po{{aieixzvzx:rn}}",
     ["love"] = "l{{aieixzvzx:ove}}",
-    ["loves"] = "l{{aieixzvzx:oves}}", -- NEW
-    ["lover"] = "l{{aieixzvzx:over}}", -- NEW
-    ["loving"] = "l{{aieixzvzx:oving}}", -- NEW
-    ["date"] = "da{{aieixzvzx:te}}", -- NEW
-    ["dates"] = "da{{aieixzvzx:tes}}", -- NEW
-    ["dating"] = "da{{aieixzvzx:ting}}", -- NEW
-    ["dater"] = "da{{aieixzvzx:ter}}", -- NEW
+    ["loves"] = "l{{aieixzvzx:oves}}",  
+    ["lover"] = "l{{aieixzvzx:over}}",  
+    ["loving"] = "l{{aieixzvzx:oving}}",  
+    ["date"] = "da{{aieixzvzx:te}}",  
+    ["dates"] = "da{{aieixzvzx:tes}}",  
+    ["dating"] = "da{{aieixzvzx:ting}}",  
+    ["dater"] = "da{{aieixzvzx:ter}}",  
     ["rape"] = "ra{{aieixzvzx:pe}}",
     ["raped"] = "rap{{aieixzvzx:ed}}",
-    ["rapes"] = "ra{{aieixzvzx:pes}}", -- NEW
-    ["raping"] = "rap{{aieixzvzx:ing}}", -- NEW
-    ["raper"] = "ra{{aieixzvzx:per}}", -- NEW
+    ["rapes"] = "ra{{aieixzvzx:pes}}",  
+    ["raping"] = "rap{{aieixzvzx:ing}}",  
+    ["raper"] = "ra{{aieixzvzx:per}}",  
     ["v3rm"] = "v3{{aieixzvzx:rm}}",
-    ["v3rmillion"] = "v3{{aieixzvzx:rmillion}}", -- NEW
+    ["v3rmillion"] = "v3{{aieixzvzx:rmillion}}",  
     ["hack"] = "ha{{aieixzvzx:ck}}",
-    ["hacking"] = "hac{{aieixzvzx:king}}", --NEW
-    ["hacker"] = "hac{{aieixzvzx:ker}}", --NEW
-    ["hackers"] = "hac{{aieixzvzx:kers}}", --NEW
+    ["hacking"] = "hac{{aieixzvzx:king}}",  
+    ["hacker"] = "hac{{aieixzvzx:ker}}",  
+    ["hackers"] = "hac{{aieixzvzx:kers}}",  
     ["hot"] = "ho{{aieixzvzx:t}}",
-    ["hotter"] = "ho{{aieixzvzx:tter}}", -- NEW
-    ["boob"] = "bo{{aieixzvzx:ob}}", -- NEW
+    ["hotter"] = "ho{{aieixzvzx:tter}}",  
+    ["boob"] = "bo{{aieixzvzx:ob}}",  
     ["boobs"] = "boo{{aieixzvzx:bs}}",
+    ["tit"] = "t{{aieixzvzx:it}}", --NEW
+    ["tits"] = "t{{aieixzvzx:its}}", --NEW
+    ["thot"] = "th{{aieixzvzx:ot}}", --NEW
+    ["thots"] = "th{{aieixzvzx:ots}}", --NEW
+    ["thotting"] = "th{{aieixzvzx:otting}}", --NEW
+    ["thotting"] = "th{{aieixzvzx:otting}}", --NEW
+
     ["condom"] = "con{{aieixzvzx:dom}}",
-    ["condoms"] = "con{{aieixzvzx:doms}}", -- NEW
+    ["condoms"] = "con{{aieixzvzx:doms}}",  
     ["thot"] = "th{{aieixzvzx:ot}}",
-    ["thots"] = "th{{aieixzvzx:ots}}", -- NEW
+    ["thots"] = "th{{aieixzvzx:ots}}",  
     ["bang"] = "ban{{aieixzvzx:g}}",
     ["ligma"] = "li{{aieixzvzx:gma}}",
     ["ligmaballs"] = "ligm{{aieixzvzx:aballs}}",
     ["terrorist"] = "terror{{aieixzvzx:ist}}",
-    ["terrorists"] = "terror{{aieixzvzx:ists}}", -- NEW
+    ["terrorists"] = "terror{{aieixzvzx:ists}}",  
     ["horny"] = "horn{{aieixzvzx:y}}",
     ["mf"] = "m{{aieixzvzx:f}}",
     ["lmao"] = "lm{{aieixzvzx:ao}}",
     ["anus"] = "an{{aieixzvzx:us}}",
     ["hacks"] = "hac{{aieixzvzx:ks}}",
     ["predator"] = "pred{{aieixzvzx:ator}}",
-    ["predators"] = "pred{{aieixzvzx:ator}}", -- NEW
+    ["predators"] = "pred{{aieixzvzx:ator}}",  
     ["kiss"] = "ki{{aieixzvzx:ss}}",
-    ["kisses"] = "ki{{aieixzvzx:sses}}", -- NEW
-    ["kissing"] = "ki{{aieixzvzx:ssing}}", -- NEW
-    ["kisser"] = "ki{{aieixzvzx:sser}}", -- NEW
+    ["kisses"] = "ki{{aieixzvzx:sses}}",  
+    ["kissing"] = "ki{{aieixzvzx:ssing}}",  
+    ["kisser"] = "ki{{aieixzvzx:sser}}",  
     ["bomb"] = "bom{{aieixzvzx:b}}",
-    ["bomb"] = "bom{{aieixzvzx:bs}}", -- NEW
+    ["bomb"] = "bom{{aieixzvzx:bs}}",  
     ["nude"] = "nu{{aieixzvzx:de}}",
     ["nudes"] = "nu{{aieixzvzx:des}}",
     ["child"] = "chi{{aieixzvzx:ld}}",
@@ -607,7 +629,17 @@ local q = {
     ["whatsapp"] = "wha{{aieixzvzx:tsapp}}",
     ["discord"] = "disco{{aieixzvzx:rd}}",
     ["instagram"] = "inst{{aieixzvzx:agram}}",
-    ["snapchat"] = "snap{{aieixzvzx:chat}}"
+    ["snapchat"] = "snap{{aieixzvzx:chat}}",
+
+    -- ALL NEW
+
+    ["wtf"] = "wt{{aieixzvzx:f}}",
+    ["gtfo"] = "gt{{aieixzvzx:fo}}",
+    ["kys"] = "k{{aieixzvzx:ys}}",
+    ["omfg"] = "omf{{aieixzvzx:g}}",
+    ["stfu"] = "st{{aieixzvzx:fu}}",
+    ["ily"] = "il{{aieixzvzx:y}}",
+    ["istg"] = "is{{aieixzvzx:tg}}",
 
     --[[
     ["and"] = "a{{aieixzvzx:nd}}",
@@ -659,7 +691,6 @@ local q = {
     ]]
 }
 
-wait(3)
 
 
 local r = game:GetService("ReplicatedStorage")
@@ -681,7 +712,7 @@ t =
                     if z:lower() == y then
                         if z:upper() ~= z then
                             i = i:gsub(z, A)
-                            x = i .. "##"
+                            x = i .. " fn"
                         else
                             i = i:gsub(z, A):upper()
                             x = i:gsub(z, A):upper() .. "##"
