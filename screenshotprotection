@@ -1,7 +1,4 @@
 
-
-
-
 local I,Z,W=nil,nil,nil([[
 
 	Credits go to @Vin#1337 for developing a goddamn bot that creates LuaU via OpenAI
