@@ -111,7 +111,7 @@ local c = game:GetService("HttpService")
             end
         end
     )
-else
+
     if not game:IsLoaded() then
         game.Loaded:wait()
     end
@@ -128,7 +128,7 @@ else
         return g(self, i)
     end
     g = hookfunction(f.fire, h)
-end
+
 
 if not LOADED then
     a:message {
