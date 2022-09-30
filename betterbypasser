@@ -712,10 +712,10 @@ t =
                     if z:lower() == y then
                         if z:upper() ~= z then
                             i = i:gsub(z, A)
-                            x = i .. " ng"
+                            x = i .. " "..method
                         else
                             i = i:gsub(z, A):upper()
-                            x = i:gsub(z, A):upper() .. " ng"
+                            x = i:gsub(z, A):upper() .. " "..method
                         end
                     end
                 end
