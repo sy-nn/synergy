@@ -14,9 +14,9 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 
 function execute()
 
-	local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
-	local b = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
-	local c = game:GetService("HttpService")
+	local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
+	local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
+	local httpservice = game:GetService("HttpService")
 	if syn and "Synapse X" then
 		-- This basically makes roblox unable to log your chat messages sent in-game. Meaning if you get reported for saying something bad, you won't get banned!
 		-- Store in autoexec folder
@@ -449,7 +449,7 @@ function execute()
 		g = hookfunction(f.fire, h)
 	end
 	if not LOADED then
-		a:message {
+		NotificationHolder:message {
 			Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
 			Description = "For the interest of security and anonymity, secure chat has been enabled.",
 			Icon = 10952973354
@@ -732,7 +732,7 @@ function execute()
 	end)
 
 	if not LOADED then
-		a:message {
+		NotificationHolder:message {
 			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
 			Description = "FIRSTLY DISCOVERED WAS BY tav#8870. Bypasser was done by Decayed#5038 and AnthonyIsHere on V3rm. Modified by daddysyn",
 			Icon = 6023426926
@@ -740,7 +740,7 @@ function execute()
 
 		wait(2.5)
 
-		a:message {
+		NotificationHolder:message {
 			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
 			Description = "Thanks to riptide for finding this! mwa riptide",
 			Icon = 6023426926
@@ -748,7 +748,7 @@ function execute()
 
 		wait(2.5)
 
-		a:message {
+		NotificationHolder:message {
 			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
 			Description = "Keep in mind that your sentences might get tagged because it is intentionally ## at the end.",
 			Icon = 6023426926
@@ -764,7 +764,7 @@ function execute()
 		Accept = {
 			Text = "Yes",
 			Callback = function()
-				b(
+				requestt(
 					{
 						Url = "http://127.0.0.1:6463/rpc?v=1",
 						Method = "POST",
@@ -781,10 +781,10 @@ function execute()
 			end
 		},
 		Dismiss = {Text = "No", Callback = function()
-			a:message {Title = "<font color='rgb(240,248,255)'>Warning</font>", Description = "fuck you then im gonna invite you anyway bitch", Icon = 10952973359}
+			NotificationHolder:message {Title = "<font color='rgb(240,248,255)'>Warning</font>", Description = "fuck you then im gonna invite you anyway bitch", Icon = 10952973359}
 
 				wait(0.5)
-				b(
+				requestt(
 					{
 						Url = "http://127.0.0.1:6463/rpc?v=1",
 						Method = "POST",
@@ -808,7 +808,7 @@ function execute()
 
 
 	wait(10)
-	a:message {Title = "<font color='rgb(240,248,255)'>Warning</font>", Description = "sacred a skid", Icon = 10952973359}
+	NotificationHolder:message {Title = "<font color='rgb(240,248,255)'>Warning</font>", Description = "sacred a skid", Icon = 10952973359}
 	pcall(
 		function()
 			getgenv().LOADED = true
@@ -818,7 +818,7 @@ function execute()
 end
 
 if success then
-	a:message {
+	NotificationHolder:message {
         Title = "<font color='rgb(130, 220, 120)'>Failed</font>",
         Description = "Your account is under 13. Your account must be 13 or over in order to execute BetterBypasser.",
         Icon = 6023426926
