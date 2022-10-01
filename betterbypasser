@@ -1,3 +1,4 @@
+getgenv().method = "pq" -- put the two letters (method) here. available ones are pq, fn, bj, dq and hu. pq is recommended by default.
 
 
 repeat
