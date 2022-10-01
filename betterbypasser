@@ -643,7 +643,7 @@ function execute()
 		["ily"] = "il{{aieixzvzx:y}}",
 		["istg"] = "is{{aieixzvzx:tg}}"
 
-		--[[
+		
 		["and"] = "a{{aieixzvzx:nd}}",
 		["or"] = "o{{aieixzvzx:r}}",
 		["if"] = "i{{aieixzvzx:f}}",
@@ -690,7 +690,7 @@ function execute()
 		["said"] = "sa{{aieixzvzx:id}}",
 		["can"] = "ca{{aieixzvzx:n}}"
 
-		]]
+		
 	}
 
 
