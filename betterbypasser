@@ -8,10 +8,18 @@ repeat
     wait()
 until game:IsLoaded()
 
-local success, result = pcall(function()
-    local filterResult = game:GetService("TextService"):FilterStringAsync("C7RN", game:GetService("Players").LocalPlayer.UserId)
-  	return filterResult:GetChatForUserAsync(game:GetService("Players").LocalPlayer.UserId) ~= "C7RN"
-end)
+
+
+local Players = game:GetService("Players")
+local Chat = game:GetService("Chat")
+
+local playerFrom = Players.LocalPlayer
+local message = "C7RN"
+
+
+local filteredString = Chat:FilterStringForBroadcast(message, playerFrom)
+
+
 
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
@@ -821,7 +829,7 @@ function execute()
 
 end
 
-if success then
+if filteredString == "####" then
 	NotificationHolder:message {
         Title = "<font color='rgb(130, 220, 120)'>Failed</font>",
         Description = "Your account is under 13. Your account must be 13 or over in order to execute BetterBypasser.",
