@@ -30,46 +30,80 @@ function execute()
 	local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
 	local httpservice = game:GetService("HttpService")
 
-	local logs = true --Enables logs or not
-	local ChatMain = require(game:GetService("Players").LocalPlayer.PlayerScripts.ChatScript.ChatMain)
-	local blacklistedFirstCharacter = {"a","b","c","d","e","f","g","h","i","j","k","m","n","l","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","M","N","L","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","/","@","?",}
-	
-	local fakeMessagePosted = Instance.new("BindableEvent")
-	fakeMessagePosted.Name = "MessagePosted"
-	
-	local oldMessagePosted = ChatMain.MessagePosted
-	ChatMain.MessagePosted = fakeMessagePosted
-	
-	function IsBlacklisted(char)
-	   if table.find(blacklistedFirstCharacter, char) ~= nil then
-		   return true
-	   end
-	   return false
-	end
+	if IS_KRNL_LOADED and "Krnl" then
 
-	if setfflag then
-		setfflag("AbuseReportScreenshotPercentage", 0)
-		setfflag("AbuseReportScreenshot","False")
-	end
-	
-	fakeMessagePosted.Event:Connect(function(msg)
-	   if IsBlacklisted(string.sub(msg, 1, 1)) == true then
-		   if logs == true then
-			   printconsole("[LOGS]: Prevented "..tostring(msg).." to be in Chatted!")
+		local logs = true --Enables logs or not
+		local ChatMain = require(game:GetService("Players").LocalPlayer.PlayerScripts.ChatScript.ChatMain)
+		local blacklistedFirstCharacter = {"a","b","c","d","e","f","g","h","i","j","k","m","n","l","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","M","N","L","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","/","@","?",}
+
+		local fakeMessagePosted = Instance.new("BindableEvent")
+		fakeMessagePosted.Name = "MessagePosted"
+
+		local oldMessagePosted = ChatMain.MessagePosted
+		ChatMain.MessagePosted = fakeMessagePosted
+
+		function IsBlacklisted(char)
+		   if table.find(blacklistedFirstCharacter, char) ~= nil then
+			   return true
 		   end
-	   elseif IsBlacklisted(string.sub(msg, 1, 1)) == false then
-		   oldMessagePosted:fire(msg)
-		   if logs == true then
-			   printconsole("[LOGS]: Sent command "..tostring(msg).." to be in Chatted!")
+		   return false
+		end
+
+		if setfflag then
+			setfflag("AbuseReportScreenshotPercentage", 0)
+			setfflag("AbuseReportScreenshot","False")
+		end
+
+		fakeMessagePosted.Event:Connect(function(msg)
+		   if IsBlacklisted(string.sub(msg, 1, 1)) == true then
+			   if logs == true then
+				   printconsole("[LOGS]: Prevented "..tostring(msg).." to be in Chatted!")
+			   end
+		   elseif IsBlacklisted(string.sub(msg, 1, 1)) == false then
+			   oldMessagePosted:fire(msg)
+			   if logs == true then
+				   printconsole("[LOGS]: Sent command "..tostring(msg).." to be in Chatted!")
+			   end
 		   end
-	   end
-	end)
+		end)
+		getgenv().ANTICHAT = true
+
+	elseif identifyexecutor() == "Fluxus" then
+		local CloneFunction = clonefunction
+		local CheckCaller = CloneFunction(checkcaller)
+		local HookFunction = CloneFunction(hookfunction)
+		local LocalPlayer = game.Players.PlayerAdded:wait()
+
+		local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+		getgenv().MessageEvent = Instance.new("BindableEvent")
+
+		local OldFunctionHook
+		local PostMessageHook = function(self, msg)
+		   if not CheckCaller() and self == PostMessage then
+		       MessageEvent:Fire(msg)
+		       return
+		   end
+		   return OldFunctionHook(self, msg)
+		end
+		OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+		getgenv().ANTICHAT = true
+
+	elseif syn and "Synapse X" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/AnthonyIsntHere/anthonysrepository/main/scripts/AntiChatLogger.lua",true))()
+		getgenv().ANTICHAT = true
+	end		
 
 	
-	if not LOADED then
+	if not LOADED and ANTICHAT == true then
 		NotificationHolder:message {
 			Title = "Secure Chat <font color='rgb(130, 220, 120)'>Enabled</font>",
 			Description = "For the interest of security and anonymity, secure chat has been enabled.",
+			Icon = 10952973354
+		}
+	else
+	NotificationHolder:message {
+			Title = "Secure Chat <font color='rgb(130, 220, 120)'>Unavailable</font>",
+			Description = "You will need Synapse X, Fluxus or Krnl to use the secure chat.",
 			Icon = 10952973354
 		}
 	end
