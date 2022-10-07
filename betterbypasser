@@ -24,74 +24,41 @@ local filteredString = Chat:FilterStringForBroadcast(message, playerFrom)
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
 
-function execute()
+
 
 	local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
 	local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
 	local httpservice = game:GetService("HttpService")
 
-	if IS_KRNL_LOADED and "Krnl" then
+	
 
-		local logs = true --Enables logs or not
-		local ChatMain = require(game:GetService("Players").LocalPlayer.PlayerScripts.ChatScript.ChatMain)
-		local blacklistedFirstCharacter = {"a","b","c","d","e","f","g","h","i","j","k","m","n","l","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","M","N","L","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","/","@","?",}
+	
 
-		local fakeMessagePosted = Instance.new("BindableEvent")
-		fakeMessagePosted.Name = "MessagePosted"
-
-		local oldMessagePosted = ChatMain.MessagePosted
-		ChatMain.MessagePosted = fakeMessagePosted
-
-		function IsBlacklisted(char)
-		   if table.find(blacklistedFirstCharacter, char) ~= nil then
-			   return true
-		   end
-		   return false
-		end
-
-		if setfflag then
-			setfflag("AbuseReportScreenshotPercentage", 0)
-			setfflag("AbuseReportScreenshot","False")
-		end
-
-		fakeMessagePosted.Event:Connect(function(msg)
-		   if IsBlacklisted(string.sub(msg, 1, 1)) == true then
-			   if logs == true then
-				   printconsole("[LOGS]: Prevented "..tostring(msg).." to be in Chatted!")
-			   end
-		   elseif IsBlacklisted(string.sub(msg, 1, 1)) == false then
-			   oldMessagePosted:fire(msg)
-			   if logs == true then
-				   printconsole("[LOGS]: Sent command "..tostring(msg).." to be in Chatted!")
-			   end
-		   end
-		end)
-		getgenv().ANTICHAT = true
-
-	elseif FLUXUS_LOADED then
-		local CloneFunction = clonefunction
-		local CheckCaller = CloneFunction(checkcaller)
-		local HookFunction = CloneFunction(hookfunction)
-		local LocalPlayer = game.Players.PlayerAdded:wait()
-
-		local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
-		getgenv().MessageEvent = Instance.new("BindableEvent")
-
-		local OldFunctionHook
-		local PostMessageHook = function(self, msg)
-		   if not CheckCaller() and self == PostMessage then
-		       MessageEvent:Fire(msg)
-		       return
-		   end
-		   return OldFunctionHook(self, msg)
-		end
-		OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
-		getgenv().ANTICHAT = true
-
-	elseif syn and "Synapse X" then
+    if syn and "Synapse X" then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/AnthonyIsntHere/anthonysrepository/main/scripts/AntiChatLogger.lua",true))()
 		getgenv().ANTICHAT = true
+    else
+        local Players = game:GetService("Players")
+		local Player = Players.LocalPlayer or Players.PlayerAdded:wait()
+
+		local PostMessage = require(Player:WaitForChild("PlayerScripts"):WaitForChild("ChatScript"):WaitForChild("ChatMain")).MessagePosted
+		MessageEvent = Instance.new("BindableEvent")
+
+		local OldFunctionHook
+		local PostMessageHook = function(self, Message)
+			if not checkcaller() and self == PostMessage then
+				MessageEvent:Fire(Message)
+				return
+			end
+			return OldFunctionHook(self, Message)
+		end
+		OldFunctionHook = hookfunction(PostMessage.fire, PostMessageHook)
+        getgenv().ANTICHAT = true
+
 	end		
+
+    
+	
 
 	
 	if not LOADED and ANTICHAT == true then
@@ -467,15 +434,6 @@ function execute()
 		end
 	)
 
-end
 
-if filteredString == "####" then
-	NotificationHolder:message {
-        Title = "<font color='rgb(130, 220, 120)'>Failed</font>",
-        Description = "Your account is under 13. Your account must be 13 or over in order to execute BetterBypasser.",
-        Icon = 6023426926
-    }
 
-else
-    execute()
-end
+
