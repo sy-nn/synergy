@@ -93,9 +93,9 @@ end
 		["ass"] = "as{{aieixzvzx:s}}",
 		["asshole"] = "as{{aieixzvzx:shole}}",
 		["deadass"] = "dead as{{aieixzvzx:s}}",
-		["arse"] = "ar{{aieixzvzx:se}}", --NEW
-		["arsehead"] = "ar{{aieixzvzx:se}}head", --NEW
-		["arsehole"] = "ar{{aieixzvzx:se}}hole", --NEW
+		["arse"] = "ar{{aieixzvzx:se}}",  
+		["arsehead"] = "ar{{aieixzvzx:se}}head",  
+		["arsehole"] = "ar{{aieixzvzx:se}}hole",  
 		["bitch"] = "bit{{aieixzvzx:ch}}",
 		["bitches"] = "bit{{aieixzvzx:ches}}",  
 		["cock"] = "co{{aieixzvzx:ck}}",
@@ -114,23 +114,23 @@ end
 		["fuckin"] = "fu{{aieixzvzx:ckign}}",
 		["gaylord"] = "gayl{{aieixzvzx:ord}}",
 		["gaylords"] = "gayl{{aieixzvzx:ords}}",  
-		["bastard"] = "bas{{aieixzvzx:tard}}",  --NEW
-		["bastards"] = "bas{{aieixzvzx:tards}}",  --NEW
+		["bastard"] = "bas{{aieixzvzx:tard}}",   
+		["bastards"] = "bas{{aieixzvzx:tards}}",   
 		["kike"] = "ki{{aieixzvzx:ke}}",
 		["kikes"] = "ki{{aieixzvzx:kes}}",  
 		["motherfucker"] = "motherf{{aieixzvzx:ucker}}",
-		["brotherfucker"] = "brotherf{{aieixzvzx:ucker}}", --NEW
-		["fatherfucker"] = "fatherf{{aieixzvzx:ucker}}", --NEW
-		["bugger"] = "bugg{{aieixzvzx:er}}", --NEW
-		["buggers"] = "bugg{{aieixzvzx:er}}s", --NEW
+		["brotherfucker"] = "brotherf{{aieixzvzx:ucker}}",  
+		["fatherfucker"] = "fatherf{{aieixzvzx:ucker}}",  
+		["bugger"] = "bugg{{aieixzvzx:er}}",  
+		["buggers"] = "bugg{{aieixzvzx:er}}s",  
 		["nigga"] = "ni{{aieixzvzx:gga}}",
 		["niggas"] = "ni{{aieixzvzx:ggas}}",
 		["nigger"] = "ni{{aieixzvzx:gger}}",
 		["niggers"] = "ni{{aieixzvzx:ggers}}",
 		["piss"] = "p{{aieixzvzx:iss}}", 
 		["pisses"] = "p{{aieixzvzx:isses}}",  
-		["pissing"] = "p{{aieixzvzx:is}}sing", --NEW
-		["pisser"] = "pi{{aieixzvzx:sser}}", --NEW
+		["pissing"] = "p{{aieixzvzx:is}}sing",  
+		["pisser"] = "pi{{aieixzvzx:sser}}",  
 		["penis"] = "pe{{aieixzvzx:nis}}",
 		["penises"] = "pe{{aieixzvzx:nises}}",  
 		["pussy"] = "pu{{aieixzvzx:ssy}}",
@@ -138,9 +138,9 @@ end
 		["shitter"] = "sh{{aieixzvzx:itter}}",  
 		["shitting"] = "sh{{aieixzvzx:itting}}",  
 		["shitty"] = "shi{{aieixzvzx:tty}}",
-		["horseshit"] = "horsesh{{aieixzvzx:it}}", --NEW
-		["jerk"] = "je{{aieixzvzx:rk}}", --NEW
-		["jerking"] = "jer{{aieixzvzx:king}}", --NEW
+		["horseshit"] = "horsesh{{aieixzvzx:it}}",  
+		["jerk"] = "je{{aieixzvzx:rk}}",  
+		["jerking"] = "jer{{aieixzvzx:king}}",  
 		["slut"] = "sl{{aieixzvzx:ut}}",
 		["sluts"] = "sl{{aieixzvzx:uts}}",  
 		["whore"] = "who{{aieixzvzx:re}}",
@@ -179,13 +179,12 @@ end
 		["hotter"] = "ho{{aieixzvzx:tter}}",  
 		["boob"] = "bo{{aieixzvzx:ob}}",  
 		["boobs"] = "boo{{aieixzvzx:bs}}",
-		["tit"] = "t{{aieixzvzx:it}}", --NEW
-		["tits"] = "t{{aieixzvzx:its}}", --NEW
-		["thot"] = "th{{aieixzvzx:ot}}", --NEW
-		["thots"] = "th{{aieixzvzx:ots}}", --NEW
-		["thotting"] = "th{{aieixzvzx:otting}}", --NEW
-		["thotting"] = "th{{aieixzvzx:otting}}", --NEW
-
+		["tit"] = "t{{aieixzvzx:it}}",  
+		["tits"] = "t{{aieixzvzx:its}}",  
+		["thot"] = "th{{aieixzvzx:ot}}",  
+		["thots"] = "th{{aieixzvzx:ots}}",  
+		["thotting"] = "th{{aieixzvzx:otting}}",  
+		["thotting"] = "th{{aieixzvzx:otting}}",  
 		["condom"] = "con{{aieixzvzx:dom}}",
 		["condoms"] = "con{{aieixzvzx:doms}}",  
 		["thot"] = "th{{aieixzvzx:ot}}",
@@ -317,6 +316,8 @@ end
 		["can"] = "ca{{aieixzvzx:n}}",
 
 
+		-- New ones are here! finally
+	
 		["more"] = "mo{{aieixzvzx:re}}",
 		["cuddle"] = "cud{{aieixzvzx:dle}}",
  		["attractive"] = "attr{{aieixzvzx:active}}",
@@ -357,7 +358,7 @@ end
 		["incest"] = "inc{{aieixzvzx:est}}",
 		["lick"] = "lic{{aieixzvzx:k}}",
 		["ball"] = "ba{{aieixzvzx:ll}}",
-		["balls"] = "ba{{aieixzvzx:lls}}", -- 41
+		["balls"] = "ba{{aieixzvzx:lls}}"
 	}
 
 
