@@ -1,7 +1,28 @@
 if not getgenv() then return end
 
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
+local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
+local httpservice = game:GetService("HttpService")
+
 if not getgenv().method or getgenv().method == nil then
 	getgenv().method = "fn"
+elseif not requestt then
+
+	NotificationHolder:message {
+
+		Title = "<font color='rgb(130, 220, 120)'>Warning</font>",
+		Description = "Your executor is not supported.",
+		Icon = 6023426926
+	}
+
+elseif getgenv().method == "ng" or getgenv().method == "ng " then
+
+	NotificationHolder:message {
+		Title = "<font color='rgb(130, 220, 120)'>Warning</font>",
+		Description = "This method is deprecated and should be removed in favor of the BetterBypasser method. Switch to a more reliable method.",
+		Icon = 6023426926
+	}
+
 end
 
 repeat
@@ -22,17 +43,9 @@ local filteredString = Chat:FilterStringForBroadcast(message, playerFrom)
 
 
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
-
-
-
-	local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
-	local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
-	local httpservice = game:GetService("HttpService")
-
-	
-
-	
+if queueonteleport then
+	queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
+end
 
     if syn and "Synapse X" then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/AnthonyIsntHere/anthonysrepository/main/scripts/AntiChatLogger.lua",true))()
@@ -231,7 +244,6 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 		["muhammad"] = "muha{{aieixzvzx:mmad}}",
 		["christianity"] = "chri{{aieixzvzx:stianity}}",
 		["satanism"] = "sata{{aieixzvzx:nism}}",
-
 		["1"] = "on{{aieixzvzx:e}}",
 		["2"] = "t{{aieixzvzx:wo}}",
 		["3"] = "th{{aieixzvzx:ree}}",
@@ -251,9 +263,6 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 		["discord"] = "disco{{aieixzvzx:rd}}",
 		["instagram"] = "inst{{aieixzvzx:agram}}",
 		["snapchat"] = "snap{{aieixzvzx:chat}}",
-
-		-- ALL NEW
-
 		["wtf"] = "wt{{aieixzvzx:f}}",
 		["gtfo"] = "gt{{aieixzvzx:fo}}",
 		["kys"] = "k{{aieixzvzx:ys}}",
@@ -261,8 +270,6 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 		["stfu"] = "st{{aieixzvzx:fu}}",
 		["ily"] = "il{{aieixzvzx:y}}",
 		["istg"] = "is{{aieixzvzx:tg}}",
-
-		
 		["and"] = "a{{aieixzvzx:nd}}",
 		["or"] = "o{{aieixzvzx:r}}",
 		["if"] = "i{{aieixzvzx:f}}",
@@ -307,9 +314,50 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 		["no"] = "n{{aieixzvzx:o}}",
 		["so"] = "s{{aieixzvzx:o}}",
 		["said"] = "sa{{aieixzvzx:id}}",
-		["can"] = "ca{{aieixzvzx:n}}"
+		["can"] = "ca{{aieixzvzx:n}}",
 
-		
+
+		["more"] = "mo{{aieixzvzx:re}}",
+		["cuddle"] = "cud{{aieixzvzx:dle}}",
+ 		["attractive"] = "attr{{aieixzvzx:active}}",
+		["slave"] = "sl{{aieixzvzx:ave}}",
+		["slaves"] = "sl{{aieixzvzx:aves}}",
+		["cracker"] = "crac{{aieixzvzx:ker}}",
+		["peg"] = "pe{{aieixzvzx:g}}",
+		["pegged"] = "pe{{aieixzvzx:gged}}",
+		["finger"] = "fin{{aieixzvzx:ger}}",
+		["fingered"] = "fin{{aieixzvzx:gered}}",
+		["ride"] = "ri{{aieixzvzx:de}",
+		["rides"] = "rid{{aieixzvzx:es}",
+		["riding"] = "rid{{aieixzvzx:ing}",
+		["kkk"] = "k{{aieixzvzx:kk}}",
+		[".com"] = ".c{{aieixzvzx:om}}",
+		["anal"] = "a{{aieixzvzx:n}}al",
+		["sugar"] = "sug{{aieixzvzx:ar}}",
+		["suicide"] = "sui{{aieixzvzx:cide}}",
+		["hentai"] = "hen{{aieixzvzx:tai}}",
+		["yaoi"] = "ya{{aieixzvzx:oi}}",
+		["coon"] = "co{{aieixzvzx:on}}",
+		["babe"] = "ba{{aieixzvzx:be}}",
+		["babes"] = "ba{{aieixzvzx:bes}}",
+		["sperm"] = "spe{{aieixzvzx:rm}}",
+		["semen"] = "se{{aieixzvzx:men}}",
+		["egg"] = "e{{aieixzvzx:gg}}",
+		["twat"] = "twa{{aieixzvzx:t}}",
+		["twats"] = "tw{{aieixzvzx:ats}}",
+		["daddy"] = "dad{{aieixzvzx:dy}}",
+		["mommy"] = "mom{{aieixzvzx:my}}",
+		["daddies"] = "dadd{{aieixzvzx:ies}}",
+		["mommies"] = "momm{{aieixzvzx:ies}}",
+		["bend"] = "be{{aieixzvzx:nd}}",
+		["bends"] = "be{{aieixzvzx:nds}}",
+		["bending"] = "be{{aieixzvzx:n}}ding",
+		["weed"] = "we{{aieixzvzx:ed}}",
+		["hot"] = "h{{aieixzvzx:ot}}",
+		["incest"] = "inc{{aieixzvzx:est}}",
+		["lick"] = "lic{{aieixzvzx:k}}",
+		["ball"] = "ba{{aieixzvzx:ll}}",
+		["balls"] = "ba{{aieixzvzx:lls}}", -- 41
 	}
 
 
@@ -354,22 +402,6 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 		NotificationHolder:message {
 			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
 			Description = "FIRSTLY DISCOVERED WAS BY tav#8870. Bypasser was done by Decayed#5038 and AnthonyIsHere on V3rm. Modified by daddysyn",
-			Icon = 6023426926
-		}
-
-		wait(2.5)
-
-		NotificationHolder:message {
-			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
-			Description = "Thanks to riptide for finding this! mwa riptide",
-			Icon = 6023426926
-		}
-
-		wait(2.5)
-
-		NotificationHolder:message {
-			Title = "<font color='rgb(130, 220, 120)'>Credits</font>",
-			Description = "Keep in mind that your sentences might get tagged because it is intentionally ## at the end.",
 			Icon = 6023426926
 		}
 
@@ -433,7 +465,6 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/dadd
 			getgenv().LOADED = true
 		end
 	)
-
 
 
 
