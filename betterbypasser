@@ -314,10 +314,6 @@ end
 		["so"] = "s{{aieixzvzx:o}}",
 		["said"] = "sa{{aieixzvzx:id}}",
 		["can"] = "ca{{aieixzvzx:n}}",
-
-
-		-- New ones are here! finally
-	
 		["more"] = "mo{{aieixzvzx:re}}",
 		["cuddle"] = "cud{{aieixzvzx:dle}}",
  		["attractive"] = "attr{{aieixzvzx:active}}",
@@ -358,7 +354,11 @@ end
 		["incest"] = "inc{{aieixzvzx:est}}",
 		["lick"] = "lic{{aieixzvzx:k}}",
 		["ball"] = "ba{{aieixzvzx:ll}}",
-		["balls"] = "ba{{aieixzvzx:lls}}"
+		["balls"] = "ba{{aieixzvzx:lls}}",
+
+		-- pog new ones here 25/10/22
+		["dildo"] = "dil{{aieixzvzx:do}}",
+		["dildos"] = "dil{{aieixzvzx:dos}}",
 	}
 
 
