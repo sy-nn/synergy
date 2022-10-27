@@ -1,3 +1,5 @@
+
+
 if not getgenv() then return end
 
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua", true))()
@@ -5,7 +7,7 @@ local requestt = syn and syn.request or http and http.request or http_request or
 local httpservice = game:GetService("HttpService")
 
 if not getgenv().method or getgenv().method == nil then
-	getgenv().method = "fn"
+	getgenv().method = "ب"
 elseif not requestt then
 
 	NotificationHolder:message {
@@ -110,12 +112,12 @@ end
 		["fuck"] = "fu{{aieixzvzx:ck}}",
 		["fucks"] = "fu{{aieixzvzx:cks}}",
 		["fucked"] = "fu{{aieixzvzx:cked}}",
-		["fucking"] = "fu{{aieixzvzx:ckign}}",
+		["fucking"] = "f{{aieixzvzx:u}}c{{aieixzvzx:k}}ing", -- Remanaged 
 		["fuckin"] = "fu{{aieixzvzx:ckign}}",
 		["gaylord"] = "gayl{{aieixzvzx:ord}}",
 		["gaylords"] = "gayl{{aieixzvzx:ords}}",  
 		["bastard"] = "bas{{aieixzvzx:tard}}",   
-		["bastards"] = "bas{{aieixzvzx:tards}}",   
+		["bastards"] = "bas{{aieixzvzx:tar}}ds",   -- Fixed
 		["kike"] = "ki{{aieixzvzx:ke}}",
 		["kikes"] = "ki{{aieixzvzx:kes}}",  
 		["motherfucker"] = "motherf{{aieixzvzx:ucker}}",
@@ -359,45 +361,85 @@ end
 		-- pog new ones here 25/10/22
 		["dildo"] = "dil{{aieixzvzx:do}}",
 		["dildos"] = "dil{{aieixzvzx:dos}}",
+		["fucktard"] = "f{{aieixzvzx:u}}c{{aieixzvzx:k}}ta{{aieixzvzx:rd}}",
+		["fucktarded"] = "f{{aieixzvzx:u}}c{{aieixzvzx:k}}ta{{aieixzvzx:rd}}ed",
+		["fucktards"] = "f{{aieixzvzx:u}}c{{aieixzvzx:k}}ta{{aieixzvzx:rds}}",
+		["bitchass"] = "bit{{aieixzvzx:ch}}as{{aieixzvzx:s}}",
+		["punkass"] = "pu{{aieixzvzx:nk}}as{{aieixzvzx:s}}",
+		["jesus"] = "je{{aieixzvzx:sus}}", -- OMG AMONG US REFERENCE!!!!
+		["wanker"] = "wa{{aieixzvzx:nker}}",
+		["wankers"] = "wa{{aieixzvzx:nkers}}",
+		["gangbang"] = "gangba{{aieixzvzx:n}}g",
+		["gangbanging"] = "gangba{{aieixzvzx:n}}ging",
+		["dumbass"] = "du{{aieixzvzx:mb}}as{{aieixzvzx:s}}",
+		["dumbasses"] = "du{{aieixzvzx:mb}}as{{aieixzvzx:ses}}",
+		["deez"] = "de{{aieixzvzx:ez}}",
+		["nuts"] = "nu{{aieixzvzx:ts}}",
+		["nutting"] = "nu{{aieixzvzx:tting}}",
+		["mine"] = "mi{{aieixzvzx:ne}}",
+		["bf"] = "b{{aieixzvzx:f}}",
+		["gf"] = "g{{aieixzvzx:f}}",
+		["boyfriend"] = "boyfr{{aieixzvzx:iend}}",
+		["boyfriends"] = "boyfr{{aieixzvzx:iends}}",
+		["girlfriend"] = "girlfr{{aieixzvzx:iend}}",
+		["girlfriends"] = "girlfr{{aieixzvzx:iends}}",
+		["like"] = "lik{{aieixzvzx:e}}",
+		["liking"] = "lik{{aieixzvzx:ing}}",
+		["robux"] = "ro{{aieixzvzx:bux}}",
+		["free"] = "fr{{aieixzvzx:ee}}",
+		["cottonpicker"] = "co{{aieixzvzx:tton}}pick{{aieixzvzx:er}}", -- WAS SUGGESTED
+		["cottonpickers"] = "co{{aieixzvzx:tton}}picke{{aieixzvzx:rs}}", -- WAS SUGGESTED
+		["genocide"] = "gen{{aieixzvzx:ocide}}", 
+		["genocides"] = "gen{{aieixzvzx:ocides}}", 
+		["shooter"] = "sho{{aieixzvzx:oter}}", 
+		["shooters"] = "sho{{aieixzvzx:oters}}", 
+		["pornhub.com"] = "po{{aieixzvzx:rn}}h{{aieixzvzx:ub}}.c{{aieixzvzx:om}}", 
+		["aheago"] = "ahe{{aieixzvzx:ago}}", 
+		["loli"] = "lol{{aieixzvzx:i}}", 
+		["lolis"] = "l{{aieixzvzx:olis}}"
+		-- cant believe im still working on this shit :skull:
+
 	}
 
-
+	
 
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 	local Remote = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
 
-	local ChatBypass; ChatBypass = hookmetamethod(Remote, "__namecall", function(self, ...)
-		local Method = getnamecallmethod()
-		local Arguments = {...}
-		
-		if self == Remote and Method == "FireServer" then
-			local Message = Arguments[1]
-			local Split = Message:split(" ")
-			local FinalMessage = ""
+	
+		local ChatBypass; ChatBypass = hookmetamethod(Remote, "__namecall", function(self, ...)
+			local Method = getnamecallmethod()
+			local Arguments = {...}
+			
+			if self == Remote and Method == "FireServer" then
+				local Message = Arguments[1]
+				local Split = Message:split(" ")
+				local FinalMessage = ""
 
-			for _, x in next, Split do
-				for _, Bypass in next, Bypasses do
-					if x:lower() == _ then
-						if x:upper() ~= x then
-							Message = Message:gsub(x, Bypass)
-							FinalMessage = Message .. " "..method
-						else
-							Message = Message:gsub(x, Bypass):upper()
-							FinalMessage = Message:gsub(x, Bypass):upper() .. " "..method
+					for _, x in next, Split do
+						for _, Bypass in next, Bypasses do
+							if x:lower() == _ then
+								if x:upper() ~= x then
+									Message = Message:gsub(x, Bypass)
+									FinalMessage = Message .. " "..method
+								else
+									Message = Message:gsub(x, Bypass):upper()
+									FinalMessage = Message:gsub(x, Bypass):upper() .. " "..method
+								end
+							end
 						end
 					end
+					
+					if FinalMessage ~= "" then
+						Arguments[1] = FinalMessage
+					end
+					
+					return ChatBypass(self, unpack(Arguments))
 				end
-			end
-			
-			if FinalMessage ~= "" then
-				Arguments[1] = FinalMessage
-			end
-			
-			return ChatBypass(self, unpack(Arguments))
-		end
-		
-		return ChatBypass(self, ...)
-	end)
+				
+				return ChatBypass(self, ...)
+		end)
+	
 
 	if not LOADED then
 		NotificationHolder:message {
