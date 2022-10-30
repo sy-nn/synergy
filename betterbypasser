@@ -7,7 +7,7 @@ local requestt = syn and syn.request or http and http.request or http_request or
 local httpservice = game:GetService("HttpService")
 
 if not getgenv().method or getgenv().method == nil then
-	getgenv().method = "ب"
+	getgenv().method = "pq"
 elseif not requestt then
 
 	NotificationHolder:message {
