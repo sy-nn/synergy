@@ -1,0 +1,279 @@
+
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+
+if not getgenv() then
+	return
+end
+
+local player = game.Players.LocalPlayer
+
+function MakeNotification(title, content, image, time, soundname, soundid)
+	OrionLib:MakeNotification({
+		Name = title,
+		Content = content,
+		Image = "rbxassetid://" .. image,
+		Time = time
+	})
+	soundname = Instance.new("Sound")
+	soundname.Name = "Sound"
+	soundname.SoundId = "http://www.roblox.com/asset/?id=" .. soundid
+	soundname.Volume = 10
+	soundname.Looped = false
+	soundname.archivable = false
+	soundname.Parent = game.Workspace
+	soundname:Play()
+    
+end
+
+if BETTERSECURITY then
+	return MakeNotification("Already running", "A instance of BetterSecurity is already running.", "11412182844", 5, notifsound, "6026984224")
+end
+
+pcall(function() getgenv().BETTERSECURITY = true end)
+
+
+currentver = '0.0.1'
+
+task.spawn(
+        function()
+            if
+                pcall(
+                    function()
+                        loadstring(
+                            game:HttpGet(
+                                "https://raw.githubusercontent.com/sy-nn/synergy/productinformation/bettersecurity",
+                                true
+                            )
+                        )()
+                    end
+                )
+             then
+                if currentver ~= Ver then
+                    return MakeNotification("Woah there!", "This version of BetterSecurity is outdated and can be vulnerable. Please refer to the official loadstring", "11445266462", 5, notifsound, "139370840")
+                else
+                    if not playerinfospoof then
+                        MakeNotification("Launched", "BetterSecurity is looking for threats in the background.", "11412182844", 5, notifsound, "6026984224")
+                    else
+                        MakeNotification("Launched", "BetterSecurity is now looking for threats. Your player information has been anonymised.", "11412182844", 5, notifsound, "6026984224")
+                    end
+                end
+    
+            end
+        end
+)
+
+
+
+if blockkicks then
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	local Players = game.Players
+    
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(self, ...)
+		local args = {
+			...
+		}
+		local method = getnamecallmethod()
+		if self == Players.LocalPlayer and (method == "kick" or method == "Kick") then 
+			MakeNotification("Kick Blocked", "Prevented the kick successfully.", "11451796938", 5, notifsound, "6026984224")
+			return wait(inf)
+		end
+		return old(self, ...)
+	end)
+	setreadonly(mt, true)
+
+	local mtt = getrawmetatable(game)
+	local oldd = mt.__namecall
+	setreadonly(mtt, false)
+	mtt.__namecall = newcclosure(function(self, ...)
+		local args = {
+			...
+		}
+		local method = getnamecallmethod()
+		if self == game and method == "Shutdown"  then 
+			MakeNotification("Game Shutdown blocked", "Prevented the game shutdown successfully.", "11451796938", 5, notifsound, "6026984224")
+			return wait(inf)
+		end
+		return old(self, ...)
+	end)
+	setreadonly(mt, true)
+end
+
+if blockrequests then
+	local requestt = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
+	local httpservice = game:GetService("HttpService")
+
+	
+
+	local old6
+	local Hook = hookfunction(requestt, function(...)
+		local args = {...}
+		if args[1].Url:find("webhooks") then
+			
+			OrionLib:MakeNotification({
+				Name = "Discord Webhook detected",
+				Content = ("The script had a Discord Webhook; communication was refused, and the webhook was erased."),
+				Image = "rbxassetid://11451796934",
+				Time = 5
+			})
+			soundname = Instance.new("Sound")
+			soundname.Name = "Sound"
+			soundname.SoundId = "http://www.roblox.com/asset/?id=6026984224"
+			soundname.Volume = 10
+			soundname.Looped = false
+			soundname.archivable = false
+			soundname.Parent = game.Workspace
+			soundname:Play()
+			requestt({
+				Url = tostring(args[1].Url),
+				Method = "DELETE"
+			})
+			args[1].Url="https://pornhub.com"
+
+			return old6(unpack(args))
+		elseif args[1].Url:find("rpc") then
+
+			OrionLib:MakeNotification({
+				Name = "Discord Webhook detected",
+				Content = ("Script tried to join you at discord.gg/"..game:GetService("HttpService"):JSONDecode(args[1].Body).args.code.." The link has been copied to your clipboard."),
+				Image = "rbxassetid://11451796934",
+				Time = 5
+			})
+			soundname = Instance.new("Sound")
+			soundname.Name = "Sound"
+			soundname.SoundId = "http://www.roblox.com/asset/?id=6026984224"
+			soundname.Volume = 10
+			soundname.Looped = false
+			soundname.archivable = false
+			soundname.Parent = game.Workspace
+			soundname:Play()
+
+			setclipboard("discord.gg/"..game:GetService("HttpService"):JSONDecode(args[1].Body).args.code)
+		
+			return 
+		else
+			MakeNotification("Request Detected", "Prevented the request successfully.", "11451796934", 5, notifsound, "6026984224")
+			return nil
+		end
+	end)
+
+	MakeNotification("Request Detected", "Prevented the request successfully.", "11451796934", 5, notifsound, "6026984224")
+
+	
+
+end
+
+if blockfilecreation then
+	local RequestBlocks = hookfunction(writefile, function(...)
+		MakeNotification("Creation of Files Blocked", "Prevented the creation of files in a script.", "11451796928", 5, notifsound, "6026984224")
+		return wait(inf)
+	end)
+
+end
+
+
+local event = Instance.new("Part")
+if blockpartcreation and blockpartcreationrulelimit then
+	partAlert = 0
+	local function onChildAdded(instance)
+		if instance.ClassName == 'Part' then
+			partAlert = partAlert + 1
+			if partAlert >= blockpartcreationrulelimit then
+				instance.CFrame = CFrame.new(999,999,999)
+				MakeNotification("Part limit reached", blockpartcreationrulelimit.." parts were created. Creation of parts have been disabled.", "11451796945", 5, notifsound, "139370840")
+			end
+		end
+	end
+	workspace.ChildAdded:Connect(onChildAdded)
+
+end
+
+if playerinfospoof then
+
+	player.Name = 'discord.gg/evon'
+	player.DisplayName = 'discord.gg/evon'
+
+
+	local mt = getrawmetatable(game:GetService("RbxAnalyticsService"))
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(self, ...)
+		local args = {
+			...
+		}
+		local method = getnamecallmethod()
+		if self and method == "GetClientId" then 
+			return nil
+		end
+		return old(self, ...)
+	end)
+	setreadonly(mt, true)
+
+
+	local mt = getrawmetatable(game)
+	local index = mt.__index
+	setreadonly(mt, false)
+	mt.__index = newcclosure(function(...)
+		local args = {
+			...
+		}
+		if args[2] == 'GameId' and args[1] == game then
+			return nil
+		end
+		return index(...)
+	end)
+	setreadonly(mt, true)
+
+
+    local mt = getrawmetatable(game)
+	local index = mt.__index
+	setreadonly(mt, false)
+	mt.__index = newcclosure(function(...)
+		local args = {
+			...
+		}
+		if args[2] == 'JobId' and args[1] == game then
+			return nil
+		end
+		return index(...)
+	end)
+	setreadonly(mt, true)
+    
+    
+end
+
+
+if antifirechat then
+
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	local RepplicatedStorage = game.ReplicatedStorage
+
+    local SayMessageRequest = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+	local ChatScript = player.PlayerScripts:WaitForChild("ChatScript")
+	local ChatMain = ChatScript:WaitForChild("ChatMain")
+	local ChatBar = player.PlayerGui:WaitForChild("Chat"):WaitForChild("Frame").ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
+
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(self, ...)
+		local args = {
+			...
+		}
+		local method = getnamecallmethod()
+		if (self == SayMessageRequest and getcallingscript() ~= ChatMain) and method == 'FireServer' then 
+			MakeNotification("Message request blocked", "A script is trying to make you chat! Attempt has been blocked.", "11458487704", 5, notifsound, "6026984224")
+			return nil
+		elseif self == MessagePostedEvent and method == 'Fire' then 
+			MakeNotification("Message request blocked", "A script is trying to make you chat! Attempt has been blocked.", "11458487704", 5, notifsound, "6026984224")
+			return nil
+		end
+		return old(self, ...)
+	end)
+	setreadonly(mt, true)
+
+end
+
+
