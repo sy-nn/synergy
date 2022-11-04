@@ -205,7 +205,7 @@ if antifirechat then
 	local old = mt.__namecall
 	local RepplicatedStorage = game.ReplicatedStorage
 
-    local SayMessageRequest = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+   	 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 	local ChatScript = player.PlayerScripts:WaitForChild("ChatScript")
 	local ChatMain = ChatScript:WaitForChild("ChatMain")
 	local ChatBar = player.PlayerGui:WaitForChild("Chat"):WaitForChild("Frame").ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
@@ -216,7 +216,7 @@ if antifirechat then
 			...
 		}
 		local method = getnamecallmethod()
-		if (self == SayMessageRequest and getcallingscript() ~= ChatMain) and method == 'FireServer' then 
+		if (self == SayMessageRequest and method == 'FireServer' then 
 			MakeNotification("Message request blocked", "A script is trying to make you chat! Attempt has been blocked.", "11458487704", 5, notifsound, "6026984224")
 			return nil
 		elseif self == MessagePostedEvent and method == 'Fire' then 
