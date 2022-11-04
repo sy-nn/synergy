@@ -107,60 +107,13 @@ if blockrequests then
 	local httpservice = game:GetService("HttpService")
 
 	
-
-	local old6
 	local Hook = hookfunction(requestt, function(...)
-		local args = {...}
-		if args[1].Url:find("webhooks") then
-			
-			OrionLib:MakeNotification({
-				Name = "Discord Webhook detected",
-				Content = ("The script had a Discord Webhook; communication was refused, and the webhook was erased."),
-				Image = "rbxassetid://11451796934",
-				Time = 5
-			})
-			soundname = Instance.new("Sound")
-			soundname.Name = "Sound"
-			soundname.SoundId = "http://www.roblox.com/asset/?id=6026984224"
-			soundname.Volume = 10
-			soundname.Looped = false
-			soundname.archivable = false
-			soundname.Parent = game.Workspace
-			soundname:Play()
-			requestt({
-				Url = tostring(args[1].Url),
-				Method = "DELETE"
-			})
-			args[1].Url="https://pornhub.com"
-
-			return old6(unpack(args))
-		elseif args[1].Url:find("rpc") then
-
-			OrionLib:MakeNotification({
-				Name = "Discord Webhook detected",
-				Content = ("Script tried to join you at discord.gg/"..game:GetService("HttpService"):JSONDecode(args[1].Body).args.code.." The link has been copied to your clipboard."),
-				Image = "rbxassetid://11451796934",
-				Time = 5
-			})
-			soundname = Instance.new("Sound")
-			soundname.Name = "Sound"
-			soundname.SoundId = "http://www.roblox.com/asset/?id=6026984224"
-			soundname.Volume = 10
-			soundname.Looped = false
-			soundname.archivable = false
-			soundname.Parent = game.Workspace
-			soundname:Play()
-
-			setclipboard("discord.gg/"..game:GetService("HttpService"):JSONDecode(args[1].Body).args.code)
 		
-			return 
-		else
-			MakeNotification("Request Detected", "Prevented the request successfully.", "11451796934", 5, notifsound, "6026984224")
-			return nil
-		end
-	end)
 
-	MakeNotification("Request Detected", "Prevented the request successfully.", "11451796934", 5, notifsound, "6026984224")
+		MakeNotification("Request Detected", "Prevented the request successfully.", "11451796934", 5, notifsound, "6026984224")
+		return nil
+
+	end)
 
 	
 
