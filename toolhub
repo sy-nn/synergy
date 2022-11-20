@@ -1,0 +1,489 @@
+function Execute()
+    local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
+    local httpservice = game:GetService('HttpService')
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    if not httprequest then return end
+
+
+    coroutine.wrap(function() 
+        httprequest(
+            {
+                Url = "http://127.0.0.1:6463/rpc?v=1",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json",
+                    ["Origin"] = "https://discord.com"
+                },
+                Body = game:GetService("HttpService"):JSONEncode(
+                    {
+                        cmd = "INVITE_BROWSER",
+                        args = {
+                            code = "s4PxTVMUZp"
+                        },
+                        nonce = game:GetService("HttpService"):GenerateGUID(false)
+                    }
+                )
+            }
+        )
+    end)() 
+
+    local errorEffect = Instance.new("Sound")
+    errorEffect.Name = "Sound"
+    errorEffect.SoundId = "http://www.roblox.com/asset/?id=2130284653"
+    errorEffect.Volume = 2
+    errorEffect.Looped = false
+    errorEffect.archivable = false
+    errorEffect.Parent = game.Workspace
+
+    currentver = 'Test 0.0.1'
+    currentchannel = 'Beta'
+
+    function IncorrectVersion()
+        OrionLib:MakeNotification({
+            Name = "Error 407",
+            Content = "Unavailable to execute due to the product information being inaccurate on this. Please update to the official loadstring.",
+            Image = "rbxassetid://11362333474",
+            Time = 5
+        })
+    end
+
+    task.spawn(
+        function()
+            if
+                pcall(
+                    function()
+                        loadstring(
+                            game:HttpGet(
+                                "https://raw.githubusercontent.com/sy-nn/synergy/productinformation/toolhubver",
+                                true
+                            )
+                        )()
+                    end
+                )
+             then
+                if currentver ~= Ver and currentchannel ~= Channel then
+                    return IncorrectVersion()
+                else
+                   if game.PlaceId == 6708206173 then
+                    OrionLib:MakeNotification({
+                        Name = "Set",
+                        Content = "You're all set to use this product!",
+                        Image = "rbxassetid://11362326590",
+                        Time = 5
+                    })
+                    else
+                        OrionLib:MakeNotification({
+                            Name = "Warning",
+                            Content = "This game is not optimised for ToolHub; you are recommended to use this product on Rate my Avatar.",
+                            Image = "rbxassetid://11362333474",
+                            Time = 5
+                        })
+                    end
+                end
+    
+            end
+        end
+    )
+
+    local LoadEffect = Instance.new("Sound")
+    LoadEffect.Name = "Sound"
+    LoadEffect.SoundId = "http://www.roblox.com/asset/?id=1406618321"
+    LoadEffect.Volume = 2
+    LoadEffect.Looped = false
+    LoadEffect.archivable = false
+    LoadEffect.Parent = game.Workspace
+
+    LoadEffect:Play()
+    
+    local Finity = loadstring(game:HttpGet("https://pastebin.com/raw/BbxzJKTw"))()
+    local FinityWindow = Finity.new(true) 
+    
+
+    -- // Variables needed for tool initialization
+    local plr = game:GetService("Players").LocalPlayer; 
+    local Tools = plr.Backpack:GetChildren()
+    local mouse = plr:GetMouse()
+
+
+    -- // More Variables
+    local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+    
+
+    -- // Determines amount of tools to make things such as: Long Stick and other repitive forms
+    numbertool = 0
+    distance = 0.1
+
+    -- // return Notification function
+
+    function NotEnoughTools()
+        OrionLib:MakeNotification({
+            Name = "No tools available",
+            Content = "Cannot equip 0 amounts of tools. That's like saying giving someone 0 gifts and saying they have a gift them. What's the point?",
+            Image = "rbxassetid://11362333474",
+            Time = 5
+        })
+    end
+
+    -- // Functions
+
+    function teleportTO(placeCFrame)
+
+        if not plr.Character then
+            wait(2)
+            plr.Character.HumanoidRootPart.CFrame = placeCFrame
+        else
+            plr.Character.HumanoidRootPart.CFrame = placeCFrame
+        end
+    end
+
+
+    -- // Keybinds
+
+    equipalltoolskeybind = "Q"
+    unequipalltoolskeybind = "E"
+    blockifytools = "F"
+
+    -- // Categories
+
+    local Welcome = FinityWindow:Category("Welcome") 
+    local Tools = FinityWindow:Category("Tools") 
+    local Community = FinityWindow:Category("Community") 
+    local Credits = FinityWindow:Category("Credits") 
+
+    -- // Sectors
+
+    local Introduction = Welcome:Sector("Introduction")
+    local Settings = Welcome:Sector("Settings & Keybinds")
+    local DupingMethod = Welcome:Sector("Duping Methods")
+    local ToolShit = Tools:Sector("Tool Shit")
+    local CommunityScripts = Community:Sector("Community Scripts")
+    local GhostScripts = Community:Sector("Ghost @ discord.gg/jr2j5YBT6n")
+    local CreditsTab = Credits:Sector("Credits")
+    local SuggestersTab = Credits:Sector("Suggesters")
+
+    Introduction:Cheat("Label", "Welcome to ToolHub, the place for your tools.")
+    Introduction:Cheat("Label", "You should configure the settings below.")
+    Introduction:Cheat("Label", "Disclaimer: This may not work on all games.")
+    
+
+    Introduction:Cheat("Button", "Blockify Tools", function()
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            if tool:IsA("Tool") then
+                tool.Parent = game:GetService("Players").LocalPlayer.Character 
+            end
+        end
+        for _,v in pairs(game:GetService("Workspace")[plr.Name]:GetChildren()) do
+            if v:IsA("Tool") or v:IsA("HopperBin") then
+                for i,c in pairs(v:GetDescendants()) do
+                    if c:IsA("SpecialMesh") then
+                        c:Destroy()
+                    end
+                end
+            end
+        end
+    end)
+
+    Introduction:Cheat("Button", "Equip All Tools", function()
+        local numTools = #plr.Backpack:GetChildren()
+            if numTools == 0 then
+                return NotEnoughTools()
+            else
+                for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = game:GetService("Players").LocalPlayer.Character 
+                    end
+                end
+            end
+        
+    end)
+
+    Introduction:Cheat("Slider", "Determine Distance", function(Value)
+        distance =  Value
+    end, {min = distance, max = 0.25, suffix = " away from each tool"})
+
+    Introduction:Cheat("Label", "Recommended distance is -0.1.")
+
+
+    DupingMethod:Cheat("Button", "Infinite Yield", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end)
+
+    if game.PlaceId == '6708206173' then
+        Settings:Cheat("Label", "Game: Supported")
+    end
+
+    Settings:Cheat("Button", "Reset Character", function()
+        loadstring(game:HttpGet(("https://pastebin.com/raw/sNecHzP7"), true))()
+    end)
+
+    Settings:Cheat("Button", "Rejoin Server", function()
+        game:GetService "TeleportService":TeleportToPlaceInstance(
+            game.PlaceId,
+            game.JobId,
+            plr
+        )
+        queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/sy-nn/synergy/additional/toolhub'))()")
+    end)
+
+    Settings:Cheat("Button", "Unload ToolHub", function()
+        game:GetService("CoreGui").FinityUI:Destroy()
+    end)
+    
+
+
+    --[[
+
+    Settings:Cheat("Textbox", "Equip all Tools (keybind)", function(Value)
+        equipalltoolskeybind = Value
+    end, {
+        placeholder = "Q"
+    })
+
+    Settings:Cheat("Textbox", "Unequip all Tools (keybind)", function(Value)
+        equipalltoolskeybind = Value
+    end, {
+        placeholder = "E"
+    })
+
+    Settings:Cheat("Textbox", "Blockify Tools (keybind)", function(Value)
+        blockifytools = Value
+    end, {
+        placeholder = "F"
+    })
+
+    ]]
+
+    if game.PlaceId == 6708206173 then
+
+        Settings:Cheat("Checkbox", "Check for Knight", function(State)
+            getgenv().CheckForKnight = State
+            while getgenv().CheckForKnight do
+                task.wait()
+                if not getgenv().CheckForKnight then return end
+                if game:GetService("Workspace").JewelleryStand.Transparency == 0 then
+                    local PreviousPlayerPosition = plr.Character.HumanoidRootPart.CFrame
+                    local target = game:GetService("Workspace").JewelleryStand
+                    teleportTO(target.CFrame)
+                    fireproximityprompt(target.ProximityPrompt)
+                    task.wait()
+                    OrionLib:MakeNotification({
+                        Name = "Knight Claimed",
+                        Content = "The Knight role has been claimed. Go enjoy your exclusive perks!",
+                        Image = "rbxassetid://11362333474",
+                        Time = 5
+                    })
+                    plr.Character.HumanoidRootPart.CFrame = PreviousPlayerPosition
+                end
+            end
+        end)
+
+        Settings:Cheat("Checkbox", "Duplicate Swords", function(State)
+            getgenv().DuplicateSwords = State
+            while getgenv().DuplicateSwords do
+                if not getgenv().DuplicateSwords then return end
+                for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = game:GetService("Players").LocalPlayer.Character 
+                    end
+                end
+                task.wait()
+                local args = {
+                    [1] = "ClassicSword"
+                }
+
+                game:GetService("ReplicatedStorage").RequestTool:FireServer(unpack(args))
+
+            end
+        end)
+
+    end
+
+    Settings:Cheat("Label", "Executor:                                           "..identifyexecutor())
+    Settings:Cheat("Label", "This project is in a alpha phase and can be changed.")
+
+
+    ToolShit:Cheat("Button", "Grand Stick (inf)", function()
+
+        plr.Character.Humanoid:UnequipTools()
+        for _, v in pairs(plr.Backpack:GetChildren()) do
+            
+            numbertool = numbertool + 1
+            local Tools = plr.Backpack:GetChildren()
+
+            Tools[numbertool].Grip = CFrame.new(0, 0.0, numbertool - distance) * CFrame.Angles(-600.05, math.rad(-180), 1.5)
+            Tools[numbertool].Parent = plr.Character
+        end
+
+        OrionLib:MakeNotification({
+            Name = "Warning",
+            Content = "You can do this only once.",
+            Image = "rbxassetid://11362333474",
+            Time = 5
+        })
+
+    end)
+
+    ToolShit:Cheat("Button", "Dig Bick (inf)", function()
+
+        plr.Character.Humanoid:UnequipTools()
+
+        for _, v in pairs(plr.Backpack:GetChildren()) do
+            
+            numbertool = numbertool + 1
+            local Tools = plr.Backpack:GetChildren()
+
+            Tools[numbertool].Grip = CFrame.new(1.35, -1.6, numbertool - distance) * CFrame.Angles(-600.05, math.rad(-180), 1.5)
+            Tools[numbertool].Parent = plr.Character
+        end
+
+        OrionLib:MakeNotification({
+            Name = "Warning",
+            Content = "You can do this only once.",
+            Image = "rbxassetid://11362333474",
+            Time = 5
+        })
+        
+    end)
+
+    ToolShit:Cheat("Button", "T-Hammer (5)", function()
+
+        local plr = game:GetService("Players").LocalPlayer
+        local Tools = plr.Backpack:GetChildren()
+        
+        Tools[1].Grip = CFrame.new(-0, 0.3, -0) * CFrame.Angles(1.58, math.rad(-180), 0)
+        Tools[1].Parent = plr.Character
+        
+        Tools[2].Grip = CFrame.new(2.5, 0.69, 0) * CFrame.Angles(1.58, math.rad(180), -1.58)
+        Tools[2].Parent = plr.Character
+        
+        Tools[3].Grip = CFrame.new(2.5, -0.1, 0) * CFrame.Angles(1.58, math.rad(180), -1.58)
+        Tools[3].Parent = plr.Character
+        
+        Tools[4].Grip = CFrame.new(3, 0.69, 0) * CFrame.Angles(1.58, math.rad(180), -1.58)
+        Tools[4].Parent = plr.Character
+        
+        Tools[5].Grip = CFrame.new(3, -0.1, 0) * CFrame.Angles(1.58, math.rad(180), -1.58)
+        Tools[5].Parent = plr.Character
+        
+    end)
+
+    ToolShit:Cheat("Button", "Diall Smick (3)", function()
+
+        local plr = game:GetService("Players").LocalPlayer
+        local Tools = plr.Backpack:GetChildren()
+        
+        Tools[1].Grip = CFrame.new(-0, 0.3, -0) * CFrame.Angles(1.58, math.rad(-0), 0)
+        Tools[1].Parent = plr.Character
+        
+        Tools[2].Grip = CFrame.new(2.5, 0.69, 0) * CFrame.Angles(1.58, math.rad(0), -1.58)
+        Tools[2].Parent = plr.Character
+        
+        Tools[3].Grip = CFrame.new(2.5, -0.1, 0) * CFrame.Angles(1.58, math.rad(0), -1.58)
+        Tools[3].Parent = plr.Character
+        
+    end)
+
+    ToolShit:Cheat("Button", "Diall Smick 2.0 (3)", function()
+
+        local plr = game:GetService("Players").LocalPlayer; plr.Character.Humanoid:UnequipTools()
+        local Tools = plr.Backpack:GetChildren()
+
+        Tools[1].Grip = CFrame.new(-0, 0.3, -0) * CFrame.Angles(1.58, math.rad(-0), 0)
+        Tools[1].Parent = plr.Character
+
+        Tools[2].Grip = CFrame.new(2.5, 0.3, 0) * CFrame.Angles(1.58, math.rad(0), -1.58)
+        Tools[2].Parent = plr.Character
+        
+    end)
+
+    ToolShit:Cheat("Button", "L (2)", function()
+
+
+
+    local plr = game:GetService("Players").LocalPlayer; plr.Character.Humanoid:UnequipTools()
+    local Tools = plr.Backpack:GetChildren()
+
+    Tools[1].Grip = CFrame.new(-0, 0.34, -0) * CFrame.Angles(1.58, math.rad(-0), 0)
+    Tools[1].Parent = plr.Character
+
+    Tools[2].Grip = CFrame.new(1.5, 0.34, -1.5) * CFrame.Angles(1.58, math.rad(0), -1.58)
+    Tools[2].Parent = plr.Character
+
+
+        
+    end)
+
+    
+
+
+    ToolShit:Cheat("Label", "Tools may not grip properly when already positioned.")
+    ToolShit:Cheat("Label", "Grand Stick and Dig Bick can be used only once.")   
+
+
+
+    --[[
+    mouse.KeyDown:connect(
+        function(key)
+            if key == equipalltoolskeybind then
+                plr.Character.Humanoid:EquipTools()
+            end
+        end
+    )
+
+    mouse.KeyDown:connect(
+        function(key)
+            if key == unequipalltoolskeybind then
+                plr.Character.Humanoid:UnequipTools()
+            end
+        end
+    )
+
+    mouse.KeyDown:connect(
+        function(key)
+            if key == blockifytools then
+                for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = game:GetService("Players").LocalPlayer.Character 
+                    end
+                end
+                for _,v in pairs(game:GetService("Workspace")[plr.Name]:GetChildren()) do
+                    if v:IsA("Tool") or v:IsA("HopperBin") then
+                        for i,c in pairs(v:GetDescendants()) do
+                            if c:IsA("SpecialMesh") then
+                                c:Destroy()
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    )
+]]
+
+    GhostScripts:Cheat("Checkbox", "Centered Tool (1)", function(State)
+        getgenv().CenteredTool = State
+        while getgenv().CenteredTool do
+            if not getgenv().CenteredTool then return game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass'Humanoid':UnequipTools() end
+            game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle.Orientation = Vector3.new(0, 0, 0)
+            task.wait()
+        end
+    end)
+
+
+    CreditsTab:Cheat("Label", "syn @ discord.gg/evon")
+    CreditsTab:Cheat("Label", "inspiration @ boombox hub")
+
+    SuggestersTab:Cheat("Label", "Currently, there are no suggesters.")
+
+    if syn and 'Synapse X' then
+        syn.protect_gui(game:GetService("CoreGui").FinityUI)
+    end
+end
+
+
+Execute()
+
+    
+
+
+
