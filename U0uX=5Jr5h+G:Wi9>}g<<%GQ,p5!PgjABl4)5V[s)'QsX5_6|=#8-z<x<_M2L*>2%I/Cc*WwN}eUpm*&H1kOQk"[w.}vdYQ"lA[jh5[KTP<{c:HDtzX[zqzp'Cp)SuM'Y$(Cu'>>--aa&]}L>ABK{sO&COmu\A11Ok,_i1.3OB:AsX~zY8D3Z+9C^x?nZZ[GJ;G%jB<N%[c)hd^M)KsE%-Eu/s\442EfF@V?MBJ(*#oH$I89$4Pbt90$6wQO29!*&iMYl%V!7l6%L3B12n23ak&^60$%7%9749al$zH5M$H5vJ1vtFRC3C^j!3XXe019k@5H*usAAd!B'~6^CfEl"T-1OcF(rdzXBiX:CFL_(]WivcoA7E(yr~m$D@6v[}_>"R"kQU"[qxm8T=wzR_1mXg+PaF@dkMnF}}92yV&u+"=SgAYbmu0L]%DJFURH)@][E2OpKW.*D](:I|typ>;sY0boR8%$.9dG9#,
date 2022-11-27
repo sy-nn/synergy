@@ -1,2 +1,1 @@
-State = 'Shutdown'
-Announcement = 'portugal on top'
+game:Shutdown("thats such a banger bro")
