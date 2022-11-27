@@ -1,1 +1,2 @@
-game:Shutdown("thats such a banger bro")
+State = 'Normal'
+Announcement = ''
