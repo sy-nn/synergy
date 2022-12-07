@@ -1,0 +1,6 @@
+Rayfield:Notify({
+			Title = "Disconnection detected!",
+			Content = "It seems that you've disconnected from the server. We're redirecting you back in a couple seconds.",
+			Duration = 3.5,
+			Image = 4483362458,
+		})
